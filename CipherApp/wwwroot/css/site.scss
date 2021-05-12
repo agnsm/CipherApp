@@ -138,7 +138,7 @@ body {
 
 	.error {
 		color: #ab3e59;
-		font-size: 14px;
+		font-size: 12px;
 	}
 
 	.button-primary {
@@ -152,5 +152,9 @@ body {
 		background-color: $green;
 		color: $dark-blue;
 		border: none;
+
+		&:focus {
+			outline : none;
+		}
 	}
 }

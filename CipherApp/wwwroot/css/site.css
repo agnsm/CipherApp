@@ -134,7 +134,7 @@ h1 {
 }
 .encoder .error, .decoder .error {
   color: #ab3e59;
-  font-size: 14px;
+  font-size: 12px;
 }
 .encoder .button-primary, .decoder .button-primary {
   margin-top: 30px;
@@ -144,6 +144,9 @@ h1 {
   background-color: #7e9673;
   color: #1f2a36;
   border: none;
+}
+.encoder .button-primary:focus, .decoder .button-primary:focus {
+  outline: none;
 }
 
 /*# sourceMappingURL=site.css.map */
