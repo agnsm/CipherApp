@@ -4,55 +4,64 @@
     ViewData["Title"] = "Szyfr Vigenère'a";
 }
 
-<h1>Szyfr Vigenère'a</h1>
+<div id="home" class="banner d-flex flex-column justify-content-center">
+    <div class="about">
+        <h1 class="text-uppercase">Szyfr Vigenère'a</h1>
+        <h3>koder i dekoder</h3>
+        <p>
+            Narzędzie umożliwiające szyfrowanie i odszyfrowywanie wiadomości z użyciem polskiego alfabetu.
+        </p>
+    </div>
+</div>
 
-<div>
-    <h2>Encoder</h2>
+<a href="#encoder" class="scroll-down">z4$zyfrvj c0ś <i class="fas fa-arrow-down"></i></a>
+
+<div id="encoder" class="encoder d-flex flex-column justify-content-center">
+    <h3>enkoder</h3>
     <form asp-action="VigenereEncoder" method="post">
-        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div asp-validation-summary="ModelOnly" class="error"></div>
         <div class="form-group">
-            <label asp-for="EncoderPlainText">Input</label>
-            <textarea asp-for="EncoderPlainText" class="form-control"></textarea>
-            <span asp-validation-for="EncoderPlainText" class="text-danger"></span>
+            <label asp-for="EncoderPlainText">wprowadź zwykły tekst:</label>
+            <textarea asp-for="EncoderPlainText" class="form-control" rows="6"></textarea>
+            <span asp-validation-for="EncoderPlainText" class="error"></span>
         </div>
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         <div class="form-group">
-            <label asp-for="EncoderKey">Key</label>
+            <label asp-for="EncoderKey">podaj słowo kluczowe:</label>
             <input type="text" asp-for="EncoderKey" class="form-control" autocomplete="off">
-            <span asp-validation-for="EncoderKey" class="text-danger"></span>
+            <span asp-validation-for="EncoderKey" class="error"></span>
         </div>
         <div class="form-group">
-            <label asp-for="EncoderCipherText">Output</label>
-            <textarea asp-for="EncoderCipherText" class="form-control"></textarea>
+            <label asp-for="EncoderCipherText">twój zaszyfrowany tekst:</label>
+            <textarea asp-for="EncoderCipherText" class="form-control" rows="6"></textarea>
         </div>
-        <button type="submit" class="btn btn-primary">ZASZYFRUJ</button>
+        <button type="submit" class="button-primary">ZASZYFRUJ</button>
     </form>
 </div>
 
-<div>
-    <h2>Decoder</h2>
+<div id="decoder" class="decoder d-flex flex-column justify-content-center">
+    <h3>dekoder</h3>
     <form asp-action="VigenereDecoder" method="post">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         <div class="form-group">
-            <label asp-for="DecoderCipherText">Input</label>
-            <textarea asp-for="DecoderCipherText" class="form-control"></textarea>
+            <label asp-for="DecoderCipherText">wprowadź zaszyfrowany tekst:</label>
+            <textarea asp-for="DecoderCipherText" class="form-control" rows="6"></textarea>
             <span asp-validation-for="DecoderCipherText" class="text-danger"></span>
         </div>
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         <div class="form-group">
-            <label asp-for="DecoderKey">Key</label>
+            <label asp-for="DecoderKey">podaj słowo kluczowe:</label>
             <input type="text" asp-for="DecoderKey" class="form-control" autocomplete="off">
             <span asp-validation-for="DecoderKey" class="text-danger"></span>
         </div>
         <div class="form-group">
-            <label asp-for="DecoderPlainText">Output</label>
-            <textarea asp-for="DecoderPlainText" class="form-control"></textarea>
+            <label asp-for="DecoderPlainText">twój odszyfrowany tekst:</label>
+            <textarea asp-for="DecoderPlainText" class="form-control" rows="6"></textarea>
         </div>
-        <button type="submit" class="btn btn-primary">ODSZYFRUJ</button>
+        <button type="submit" class="button-primary">ODSZYFRUJ</button>
     </form>
 </div>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
-

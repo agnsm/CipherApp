@@ -1,0 +1,156 @@
+﻿$dirty-white: #cecfe5;
+$green: #7e9673 ;
+$dark-blue: #1f2a36;
+$font-heading: 'Raleway', sans-serif;
+$font: 'Mulish', sans-serif;
+$nav-offset: 50px;
+
+*, *::before, *::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	background-color: $dark-blue;
+	font-family: $font;
+	font-size: 16px;
+	color: $dirty-white;
+}
+
+/****** headings ******/
+
+@for $i from 1 through 6 {
+	h#{7 - $i} {
+		font: {
+			family: $font-heading;
+			size: $i * 0.5em;
+		}
+		text-align: center;
+	}
+}
+
+/****** nav ******/
+
+.nav-wrapper {
+	background-color: $green;
+	height: $nav-offset;
+
+	.navbar {
+		padding: 10px;
+
+		.container-fluid {
+			background-color: $green;
+
+			.navbar-toggler {
+				&:focus {
+					outline: none;
+				}
+			}
+
+			.nav-link {
+				color: $dark-blue;
+				font-size: 18px;
+			}
+		}
+	}
+
+	.i {
+		color: $dark-blue;
+	}
+}
+
+/****** banner ******/
+
+.container-fluid {
+	text-align: center;
+}
+
+.banner {
+	height: 100vh;
+	margin-top: -$nav-offset;
+	padding: 0 25px;
+	text-align: center;
+
+	.about {
+		h1 {
+			margin-bottom: 10px;
+			letter-spacing: 3px;
+			font-weight: 700;
+		}
+
+		h3 {
+			margin-bottom: 35px;
+			color: #7e9673;
+		}
+	}
+}
+
+.scroll-down {
+	display: block;
+	cursor: pointer;
+	width: 200px;
+	padding: 20px 0;
+
+	margin: {
+		top: -100px;
+		bottom: 100px;
+		left: auto;
+		right: auto;
+	}
+
+	text-decoration: none;
+	font-size: 20px;
+	color: $dirty-white;
+	border: 1px solid $dirty-white;
+
+	i {
+		margin-left: 3px;
+	}
+
+	&:hover {
+		color: $dirty-white;
+		text-decoration: none;
+	}
+}
+
+/****** main ******/
+
+.encoder, .decoder {
+	min-height: 100vh;
+	text-align: left;
+
+	h3 {
+		text-align: left;
+		color: $green;
+		border-bottom: 1px solid $green;
+		margin-bottom: 25px;
+	}
+
+	input, textarea {
+		background-color: $dirty-white;
+		color: $dark-blue;
+	}
+
+	.error {
+		color: #ab3e59;
+		font-size: 14px;
+	}
+
+	.button-primary {
+		margin: {
+			top: 30px;
+		}
+
+		padding: 10px 40px;
+		font-size: 22px;
+		letter-spacing: 3px;
+		background-color: $green;
+		color: $dark-blue;
+		border: none;
+	}
+}
