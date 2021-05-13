@@ -1,4 +1,8 @@
-﻿$dirty-white: #cecfe5;
+﻿@import "../lib/bootstrap-4.0.0/scss/_functions.scss";
+@import "../lib/bootstrap-4.0.0/scss/_variables.scss";
+@import "../lib/bootstrap-4.0.0/scss/mixins/_breakpoints.scss";
+
+$dirty-white: #cecfe5;
 $green: #7e9673 ;
 $dark-blue: #1f2a36;
 $font-heading: 'Raleway', sans-serif;
@@ -51,22 +55,26 @@ body {
 				left: 10px;
 				right: 10px;
 			}
-
-			.navbar-toggler {
-				&:focus {
-					outline: none;
-				}
-			}
-
-			.nav-link {
-				color: black;
-				font-size: 18px;
-			}
 		}
 	}
 
-	.i {
+	i {
 		color: $dark-blue;
+	}
+}
+
+.navbar-toggler {
+	&:focus {
+		outline: none;
+	}
+}
+
+.nav-link {
+	color: black;
+	font-size: 18px;
+
+	&:hover {
+		color: $dirty-white;
 	}
 }
 
@@ -86,28 +94,30 @@ body {
 		position: center;
 		size: cover;
 	}
+}
 
-	.about {
-		padding: 0 15px;
-		h1 {
-			margin-bottom: 10px;
-			letter-spacing: 3px;
-			font-weight: 700;
-			color: #eef0ff;
-		}
+.about {
+	padding: 0 15px;
 
-		h3 {
-			margin-bottom: 35px;
-			color: #7e9673;
-		}
+	h1 {
+		margin-bottom: 10px;
+		letter-spacing: 3px;
+		font-weight: 700;
+		color: #eef0ff;
+	}
+
+	h3 {
+		margin-bottom: 35px;
+		color: #7e9673;
 	}
 }
 
 .scroll-down {
 	display: block;
 	cursor: pointer;
-	width: 200px;
+	width: 250px;
 	padding: 20px 0;
+	box-shadow: 0px 0px 25px -15px $dirty-white;
 
 	margin: {
 		top: -100px;
@@ -148,54 +158,59 @@ body {
 	input, textarea {
 		background-color: $dirty-white;
 		color: $dark-blue;
-	}
-
-	.error {
-		color: #ab3e59;
-		font-size: 12px;
-	}
-
-	.buttons {
-		margin: {
-			top: 30px;
-		}
-	}
-
-	.button-primary {
-		padding: 10px 40px;
-		font-size: 22px;
-		letter-spacing: 3px;
-		background-color: $green;
-		color: $dark-blue;
-		border: none;
 
 		&:focus {
-			outline: none;
+			box-shadow: 0 0 0 1px $green;
 		}
 	}
+}
 
-	.scroll-link {
-		cursor: pointer;
-		text-align: right;
+.error {
+	color: #ab3e59;
+	font-size: 12px;
+}
+
+.buttons {
+	margin: {
+		top: 30px;
+	}
+}
+
+.button-primary {
+	padding: 10px 40px;
+	font-size: 22px;
+	letter-spacing: 3px;
+	background-color: $green;
+	color: $dark-blue;
+	border: none;
+	border-radius: 5px;
+
+	&:focus {
+		outline: none;
+	}
+}
+
+.scroll-link {
+	cursor: pointer;
+	text-align: right;
+	text-decoration: none;
+	font-size: 20px;
+	color: $dirty-white;
+
+	i {
+		margin: 0 5px;
+	}
+
+	&:hover {
+		color: $green;
 		text-decoration: none;
-		font-size: 20px;
-		color: $dirty-white;
-
-		i {
-			margin: 0 5px;
-		}
-
-		&:hover {
-			color: $green;
-			text-decoration: none;
-		}
 	}
 }
 
 .description {
 	min-height: 100vh;
 	text-align: left;
-	padding: 2% 0;
+	padding: 3% 0;
 
 	h3 {
 		text-align: left;
@@ -221,11 +236,113 @@ footer {
 
 		a {
 			color: $dark-blue;
-			font-weight: bold;
+			font-weight: 700;
 
 			i {
 				margin-right: 5px;
 			}
+		}
+	}
+}
+
+/****** media queries ******/
+
+@include media-breakpoint-up(md) {
+	body {
+		font-size: 22px;
+	}
+
+	.nav-link {
+		padding: {
+			left: 20px !important;
+			right: 20px !important;
+		}
+	}
+
+	.button-primary , .nav-link, .scroll-down, .scroll-link {
+		font-size: 24px;
+	}
+
+	.error, footer .container-fluid {
+		font-size: 18px;
+	}
+
+	main > .container-fluid {
+		padding: 0 75px;
+	}
+
+	.banner {
+		margin: -$nav-offset -75px 0 -75px;
+	}
+
+	.about {
+		padding: 0 75px;
+	}
+
+	.encoder, .decoder {
+		textarea {
+			height: 250px;
+			font-size: 22px;
+		}
+		input {
+			font-size: 22px;
+		}
+	}
+}
+
+@include media-breakpoint-up(xl) {
+	main > .container-fluid {
+		padding: 0 10%;
+	}
+
+	.banner {
+		margin: -$nav-offset 0 0 0;
+		background-image: none;
+	}
+
+	.scroll-down {
+		margin: {
+			top: -150px;
+			bottom: 150px;
+		}
+	}
+}
+
+@media (min-width: 1600px) {
+	.coders-wrapper {
+		display: flex;
+	}
+
+	.encoder, .decoder {
+		width: 50%;
+		padding: 0;
+	}
+
+	.encoder {
+		margin-right: 40px;
+	}
+
+	.scroll-link {
+		display: none;
+	}
+
+	.description {
+		flex-direction: row !important;
+		align-items: center;
+	}
+
+	.text-wrapper {
+		width: 70%;
+	}
+
+	.img-wrapper {
+		display: unset !important;
+		width: 30%;
+		height: 100%;
+		text-align: center;
+
+		img {
+			max-width: 100%;
 		}
 	}
 }

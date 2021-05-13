@@ -66,15 +66,20 @@ h1 {
   padding-left: 10px;
   padding-right: 10px;
 }
-.nav-wrapper .navbar .container-fluid .navbar-toggler:focus {
+.nav-wrapper i {
+  color: #1f2a36;
+}
+
+.navbar-toggler:focus {
   outline: none;
 }
-.nav-wrapper .navbar .container-fluid .nav-link {
+
+.nav-link {
   color: black;
   font-size: 18px;
 }
-.nav-wrapper .i {
-  color: #1f2a36;
+.nav-link:hover {
+  color: #cecfe5;
 }
 
 /****** banner ******/
@@ -90,16 +95,17 @@ h1 {
   background-position: center;
   background-size: cover;
 }
-.banner .about {
+
+.about {
   padding: 0 15px;
 }
-.banner .about h1 {
+.about h1 {
   margin-bottom: 10px;
   letter-spacing: 3px;
   font-weight: 700;
   color: #eef0ff;
 }
-.banner .about h3 {
+.about h3 {
   margin-bottom: 35px;
   color: #7e9673;
 }
@@ -107,8 +113,9 @@ h1 {
 .scroll-down {
   display: block;
   cursor: pointer;
-  width: 200px;
+  width: 250px;
   padding: 20px 0;
+  box-shadow: 0px 0px 25px -15px #cecfe5;
   margin-top: -100px;
   margin-bottom: 100px;
   margin-left: auto;
@@ -142,35 +149,43 @@ h1 {
   background-color: #cecfe5;
   color: #1f2a36;
 }
-.encoder .error, .decoder .error {
+.encoder input:focus, .encoder textarea:focus, .decoder input:focus, .decoder textarea:focus {
+  box-shadow: 0 0 0 1px #7e9673;
+}
+
+.error {
   color: #ab3e59;
   font-size: 12px;
 }
-.encoder .buttons, .decoder .buttons {
+
+.buttons {
   margin-top: 30px;
 }
-.encoder .button-primary, .decoder .button-primary {
+
+.button-primary {
   padding: 10px 40px;
   font-size: 22px;
   letter-spacing: 3px;
   background-color: #7e9673;
   color: #1f2a36;
   border: none;
+  border-radius: 5px;
 }
-.encoder .button-primary:focus, .decoder .button-primary:focus {
+.button-primary:focus {
   outline: none;
 }
-.encoder .scroll-link, .decoder .scroll-link {
+
+.scroll-link {
   cursor: pointer;
   text-align: right;
   text-decoration: none;
   font-size: 20px;
   color: #cecfe5;
 }
-.encoder .scroll-link i, .decoder .scroll-link i {
+.scroll-link i {
   margin: 0 5px;
 }
-.encoder .scroll-link:hover, .decoder .scroll-link:hover {
+.scroll-link:hover {
   color: #7e9673;
   text-decoration: none;
 }
@@ -178,7 +193,7 @@ h1 {
 .description {
   min-height: 100vh;
   text-align: left;
-  padding: 2% 0;
+  padding: 3% 0;
 }
 .description h3 {
   text-align: left;
@@ -200,10 +215,102 @@ footer .container-fluid {
 }
 footer .container-fluid a {
   color: #1f2a36;
-  font-weight: bold;
+  font-weight: 700;
 }
 footer .container-fluid a i {
   margin-right: 5px;
+}
+
+/****** media queries ******/
+@media (min-width: 768px) {
+  body {
+    font-size: 22px;
+  }
+
+  .nav-link {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  .button-primary, .nav-link, .scroll-down, .scroll-link {
+    font-size: 24px;
+  }
+
+  .error, footer .container-fluid {
+    font-size: 18px;
+  }
+
+  main > .container-fluid {
+    padding: 0 75px;
+  }
+
+  .banner {
+    margin: -50px -75px 0 -75px;
+  }
+
+  .about {
+    padding: 0 75px;
+  }
+
+  .encoder textarea, .decoder textarea {
+    height: 250px;
+    font-size: 22px;
+  }
+  .encoder input, .decoder input {
+    font-size: 22px;
+  }
+}
+@media (min-width: 1200px) {
+  main > .container-fluid {
+    padding: 0 10%;
+  }
+
+  .banner {
+    margin: -50px 0 0 0;
+    background-image: none;
+  }
+
+  .scroll-down {
+    margin-top: -150px;
+    margin-bottom: 150px;
+  }
+}
+@media (min-width: 1600px) {
+  .coders-wrapper {
+    display: flex;
+  }
+
+  .encoder, .decoder {
+    width: 50%;
+    padding: 0;
+  }
+
+  .encoder {
+    margin-right: 40px;
+  }
+
+  .scroll-link {
+    display: none;
+  }
+
+  .description {
+    flex-direction: row !important;
+    align-items: center;
+  }
+
+  .text-wrapper {
+    width: 70%;
+  }
+
+  .img-wrapper {
+    display: unset !important;
+    width: 30%;
+    height: 100%;
+    text-align: center;
+  }
+  .img-wrapper img {
+    max-width: 100%;
+  }
 }
 
 /*# sourceMappingURL=site.css.map */
