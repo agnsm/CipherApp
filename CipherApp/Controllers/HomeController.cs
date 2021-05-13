@@ -27,6 +27,9 @@ namespace CipherApp.Controllers
             vigenere.EncoderPlainText = vigenereData.EncoderPlainText;
             vigenere.EncoderKey = vigenereData.EncoderKey;
             vigenere.EncoderCipherText = Encrypt(vigenereData.EncoderPlainText, vigenereData.EncoderKey);
+            vigenere.DecoderCipherText = "";
+            vigenere.DecoderKey = "";
+            vigenere.DecoderPlainText = "";
             return RedirectToAction(nameof(Index));
         }
 
@@ -36,6 +39,9 @@ namespace CipherApp.Controllers
             vigenere.DecoderCipherText = vigenereData.DecoderCipherText;
             vigenere.DecoderKey = vigenereData.DecoderKey;
             vigenere.DecoderPlainText = Decrypt(vigenereData.DecoderCipherText, vigenereData.DecoderKey);
+            vigenere.EncoderPlainText = "";
+            vigenere.EncoderKey = "";
+            vigenere.EncoderCipherText = "";
             return RedirectToAction(nameof(Index));
         }
 

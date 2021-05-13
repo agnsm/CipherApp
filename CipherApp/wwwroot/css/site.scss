@@ -96,6 +96,11 @@ body {
 	}
 }
 
+.chars {
+	display: none;
+	opacity: 0;
+}
+
 .about {
 	padding: 0 15px;
 
@@ -118,6 +123,7 @@ body {
 	width: 250px;
 	padding: 20px 0;
 	box-shadow: 0px 0px 25px -15px $dirty-white;
+	transition: 0.15s;
 
 	margin: {
 		top: -100px;
@@ -136,8 +142,10 @@ body {
 	}
 
 	&:hover {
-		color: $dirty-white;
 		text-decoration: none;
+		background-color: $dirty-white;
+		border-radius: 25px;
+		color: $dark-blue;
 	}
 }
 
@@ -184,6 +192,11 @@ body {
 	color: $dark-blue;
 	border: none;
 	border-radius: 5px;
+	transition: 0.5s;
+
+	&:hover {
+		padding: 10px 60px;
+	}
 
 	&:focus {
 		outline: none;
@@ -209,7 +222,7 @@ body {
 
 .description {
 	min-height: 100vh;
-	text-align: left;
+	text-align: justify;
 	padding: 3% 0;
 
 	h3 {
@@ -298,6 +311,16 @@ footer {
 	.banner {
 		margin: -$nav-offset 0 0 0;
 		background-image: none;
+	}
+
+	.about {
+		padding: 0 125px;
+	}
+
+	.chars {
+		display: block;
+		position: absolute;
+		font-size: 44px;
 	}
 
 	.scroll-down {
