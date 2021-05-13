@@ -41,10 +41,16 @@ body {
 	height: $nav-offset;
 
 	.navbar {
-		padding: 10px;
+		padding: 10px 0;
+		background-color: $green;
 
 		.container-fluid {
 			background-color: $green;
+
+			padding: {
+				left: 10px;
+				right: 10px;
+			}
 
 			.navbar-toggler {
 				&:focus {
@@ -53,7 +59,7 @@ body {
 			}
 
 			.nav-link {
-				color: $dark-blue;
+				color: black;
 				font-size: 18px;
 			}
 		}
@@ -72,15 +78,22 @@ body {
 
 .banner {
 	height: 100vh;
-	margin-top: -$nav-offset;
-	padding: 0 25px;
 	text-align: center;
+	margin: -$nav-offset -15px 0 -15px;
+
+	background: {
+		image: url("../images/mobile.png");
+		position: center;
+		size: cover;
+	}
 
 	.about {
+		padding: 0 15px;
 		h1 {
 			margin-bottom: 10px;
 			letter-spacing: 3px;
 			font-weight: 700;
+			color: #eef0ff;
 		}
 
 		h3 {
@@ -123,6 +136,7 @@ body {
 .encoder, .decoder {
 	min-height: 100vh;
 	text-align: left;
+	padding: 2% 0;
 
 	h3 {
 		text-align: left;
@@ -141,11 +155,13 @@ body {
 		font-size: 12px;
 	}
 
-	.button-primary {
+	.buttons {
 		margin: {
 			top: 30px;
 		}
+	}
 
+	.button-primary {
 		padding: 10px 40px;
 		font-size: 22px;
 		letter-spacing: 3px;
@@ -154,7 +170,62 @@ body {
 		border: none;
 
 		&:focus {
-			outline : none;
+			outline: none;
+		}
+	}
+
+	.scroll-link {
+		cursor: pointer;
+		text-align: right;
+		text-decoration: none;
+		font-size: 20px;
+		color: $dirty-white;
+
+		i {
+			margin: 0 5px;
+		}
+
+		&:hover {
+			color: $green;
+			text-decoration: none;
+		}
+	}
+}
+
+.description {
+	min-height: 100vh;
+	text-align: left;
+	padding: 2% 0;
+
+	h3 {
+		text-align: left;
+		color: $green;
+		border-bottom: 1px solid $green;
+		margin-bottom: 25px;
+	}
+
+	.green {
+		color: $green;
+	}
+}
+
+/****** footer ******/
+
+footer {
+	.container-fluid {
+		font-size: 14px;
+		background-color: $green;
+		color: $dark-blue;
+		text-align: center;
+		padding: 10px;
+
+		a {
+			color: $dark-blue;
+			font-weight: bold;
+
+			i {
+				margin-right: 5px;
+			}
 		}
 	}
 }

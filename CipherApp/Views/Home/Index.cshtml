@@ -9,7 +9,7 @@
         <h1 class="text-uppercase">Szyfr Vigenère'a</h1>
         <h3>koder i dekoder</h3>
         <p>
-            Narzędzie umożliwiające szyfrowanie i odszyfrowywanie wiadomości z użyciem polskiego alfabetu.
+            Narzędzie umożliwiające szyfrowanie i odszyfrowywanie wiadomości za pomocą szyfru Vigenère'a z użyciem polskiego alfabetu.
         </p>
     </div>
 </div>
@@ -22,10 +22,10 @@
         <div asp-validation-summary="ModelOnly" class="error"></div>
         <div class="form-group">
             <label asp-for="EncoderPlainText">wprowadź zwykły tekst:</label>
-            <textarea asp-for="EncoderPlainText" class="form-control" rows="6"></textarea>
+            <textarea asp-for="EncoderPlainText" class="form-control" rows="7"></textarea>
             <span asp-validation-for="EncoderPlainText" class="error"></span>
         </div>
-        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div asp-validation-summary="ModelOnly" class="error"></div>
         <div class="form-group">
             <label asp-for="EncoderKey">podaj słowo kluczowe:</label>
             <input type="text" asp-for="EncoderKey" class="form-control" autocomplete="off">
@@ -33,34 +33,63 @@
         </div>
         <div class="form-group">
             <label asp-for="EncoderCipherText">twój zaszyfrowany tekst:</label>
-            <textarea asp-for="EncoderCipherText" class="form-control" rows="6"></textarea>
+            <textarea asp-for="EncoderCipherText" class="form-control" rows="7"></textarea>
         </div>
-        <button type="submit" class="button-primary">ZASZYFRUJ</button>
+        <div class="buttons d-flex justify-content-between align-items-center">
+            <button type="submit" class="button-primary">ZASZYFRUJ</button>
+            <a href="#decoder" class="scroll-link">dekoder<i class="fas fa-arrow-down"></i></a>
+        </div>
     </form>
 </div>
 
 <div id="decoder" class="decoder d-flex flex-column justify-content-center">
     <h3>dekoder</h3>
     <form asp-action="VigenereDecoder" method="post">
-        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div asp-validation-summary="ModelOnly" class="error"></div>
         <div class="form-group">
             <label asp-for="DecoderCipherText">wprowadź zaszyfrowany tekst:</label>
-            <textarea asp-for="DecoderCipherText" class="form-control" rows="6"></textarea>
-            <span asp-validation-for="DecoderCipherText" class="text-danger"></span>
+            <textarea asp-for="DecoderCipherText" class="form-control" rows="7"></textarea>
+            <span asp-validation-for="DecoderCipherText" class="error"></span>
         </div>
-        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div asp-validation-summary="ModelOnly" class="error"></div>
         <div class="form-group">
             <label asp-for="DecoderKey">podaj słowo kluczowe:</label>
             <input type="text" asp-for="DecoderKey" class="form-control" autocomplete="off">
-            <span asp-validation-for="DecoderKey" class="text-danger"></span>
+            <span asp-validation-for="DecoderKey" class="error"></span>
         </div>
         <div class="form-group">
             <label asp-for="DecoderPlainText">twój odszyfrowany tekst:</label>
-            <textarea asp-for="DecoderPlainText" class="form-control" rows="6"></textarea>
+            <textarea asp-for="DecoderPlainText" class="form-control" rows="7"></textarea>
         </div>
-        <button type="submit" class="button-primary">ODSZYFRUJ</button>
+        <div class="buttons d-flex justify-content-between align-items-center">
+            <button type="submit" class="button-primary">ODSZYFRUJ</button>
+            <a href="#encoder" class="scroll-link">enkoder<i class="fas fa-arrow-up"></i></a>
+        </div>
     </form>
 </div>
+
+<div id="description" class="description d-flex flex-column justify-content-center">
+    <h3>opis szyfru</h3>
+    <p><span class="green">Rodzaj:</span> Polialfabetyczny szyfr podstawieniowy</p>
+    <p>
+        <span class="green">Historia i zastosowanie:</span> Słabość szyfrów monoalfabetycznych sprawiła, że próbowano wymyślać bardziej rozbudowane szyfry.
+        Naturalnym krokiem było korzystanie z kilku alfabetów zamiast jednego jak w przypadku szyfrów monoalfabetycznych.
+        Dało to początek polialfabetycznym szyfrom podstawieniowym.
+        Idea takiego szyfru pojawiła się już w XV wieku (Leon Battista Alberti).
+        Kolejne pomysły związane są z takimi nazwiskami jak Johannes Trithemius oraz Giovanni della Porta.
+        Najbardziej znany szyfr polialfabetyczny został stworzony przez Blaise de Vigenere`a,
+        oficjalnie opublikowany w jego pracy "Traicte des Chiffres" w 1586 roku.
+        Podczas tworzenia swojego szyfru Vigenere opierał się na przemyśleniach wcześniej wymienionych osób.
+    </p>
+    <p>
+        <span class="green">Opis metody:</span> Tekst szyfrujemy na podstawie hasła.
+        Szyfrowanie odbywa się w sposób następujący.
+        Każdą literę tekstu jawnego szyfrujemy korzystając z alfabetu zaczynającego się od odpowiadającej litery w haśle.
+        W przypadku, gdy hasło jest krótsze od szyfrowanego tekstu powtarzamy je wielokrotnie.
+        Szyfrowanie i deszyfrowanie odbywa się na podstawie tablicy Vigenere`a - w tym przypadku zawierającej także polskie znaki.
+    </p>
+</div>
+
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

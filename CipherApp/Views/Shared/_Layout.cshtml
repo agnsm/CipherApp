@@ -12,10 +12,10 @@
 </head>
 <body>
     <div class="nav-wrapper">
-        <nav class="navbar navbar-expand-lg">
-            <div class="container-fluid d-flex justify-content-between">
+        <nav class="navbar navbar-expand-md">
+            <div class="container-fluid d-flex justify-content-end">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fas fa-bars"></i>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -30,19 +30,26 @@
                             <a class="nav-link" href="#decoder">odszyfruj</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">instrukcja</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">opis szyfru</a>
+                            <a class="nav-link" href="#description">opis szyfru</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </div>
-    <div class="container-fluid">
-        @RenderBody()
-    </div>
+    <main>
+        <div class="container-fluid">
+            @RenderBody()
+        </div>
+    </main>
+    <footer>
+        <div class="container-fluid">
+            <div>
+                <a href="http://www.algorytm.org/kryptografia/szyfr-vigenere-a.html"><i class="fas fa-link"></i>Informacje o szyfrze Vigenère'a</a>
+            </div>
+            <a href='https://www.freepik.com/vectors/background'>Background vector created by starline - www.freepik.com</a>
+        </div>
+    </footer>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
