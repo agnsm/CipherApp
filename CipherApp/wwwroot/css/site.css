@@ -105,7 +105,6 @@ h1 {
   padding: 0 15px;
 }
 .about h1 {
-  margin-bottom: 10px;
   letter-spacing: 3px;
   font-weight: 700;
   color: #eef0ff;
@@ -120,10 +119,8 @@ h1 {
   cursor: pointer;
   width: 250px;
   padding: 20px 0;
-  box-shadow: 0px 0px 25px -15px #cecfe5;
-  transition: 0.15s;
-  margin-top: -100px;
-  margin-bottom: 100px;
+  box-shadow: inset 0px 0px 25px -15px #cecfe5;
+  transition: 0.5s;
   margin-left: auto;
   margin-right: auto;
   text-decoration: none;
@@ -136,9 +133,8 @@ h1 {
 }
 .scroll-down:hover {
   text-decoration: none;
-  background-color: #cecfe5;
-  border-radius: 25px;
-  color: #1f2a36;
+  color: #cecfe5;
+  box-shadow: inset 0px 0px 40px -15px #cecfe5;
 }
 
 /****** main ******/
@@ -171,17 +167,18 @@ h1 {
 }
 
 .button-primary {
-  padding: 10px 40px;
-  font-size: 22px;
+  cursor: pointer;
+  padding: 10px 30px;
+  font-size: 20px;
   letter-spacing: 3px;
   background-color: #7e9673;
   color: #1f2a36;
   border: none;
-  border-radius: 5px;
+  border-radius: 25px;
   transition: 0.5s;
 }
 .button-primary:hover {
-  padding: 10px 60px;
+  font-weight: 700;
 }
 .button-primary:focus {
   outline: none;
@@ -248,6 +245,16 @@ footer .container-fluid a i {
     font-size: 24px;
   }
 
+  .button-primary {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  .button-primary:hover {
+    font-weight: 400;
+    letter-spacing: 5px;
+    padding-right: 80px;
+  }
+
   .error, footer .container-fluid {
     font-size: 18px;
   }
@@ -291,11 +298,6 @@ footer .container-fluid a i {
     position: absolute;
     font-size: 44px;
   }
-
-  .scroll-down {
-    margin-top: -150px;
-    margin-bottom: 150px;
-  }
 }
 @media (min-width: 1600px) {
   .coders-wrapper {
@@ -332,6 +334,8 @@ footer .container-fluid a i {
   }
   .img-wrapper img {
     max-width: 100%;
+    box-shadow: 0px 0px 30px -15px #cecfe5;
+    border-radius: 50%;
   }
 }
 

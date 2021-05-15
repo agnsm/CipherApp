@@ -3,7 +3,7 @@
 @import "../lib/bootstrap-4.0.0/scss/mixins/_breakpoints.scss";
 
 $dirty-white: #cecfe5;
-$green: #7e9673 ;
+$green: #7e9673;
 $dark-blue: #1f2a36;
 $font-heading: 'Raleway', sans-serif;
 $font: 'Mulish', sans-serif;
@@ -105,7 +105,6 @@ body {
 	padding: 0 15px;
 
 	h1 {
-		margin-bottom: 10px;
 		letter-spacing: 3px;
 		font-weight: 700;
 		color: #eef0ff;
@@ -122,12 +121,10 @@ body {
 	cursor: pointer;
 	width: 250px;
 	padding: 20px 0;
-	box-shadow: 0px 0px 25px -15px $dirty-white;
-	transition: 0.15s;
+	box-shadow: inset 0px 0px 25px -15px $dirty-white;
+	transition: 0.5s;
 
 	margin: {
-		top: -100px;
-		bottom: 100px;
 		left: auto;
 		right: auto;
 	}
@@ -143,9 +140,8 @@ body {
 
 	&:hover {
 		text-decoration: none;
-		background-color: $dirty-white;
-		border-radius: 25px;
-		color: $dark-blue;
+		color: $dirty-white;
+		box-shadow: inset 0px 0px 40px -15px $dirty-white;
 	}
 }
 
@@ -185,17 +181,18 @@ body {
 }
 
 .button-primary {
-	padding: 10px 40px;
-	font-size: 22px;
+	cursor: pointer;
+	padding: 10px 30px;
+	font-size: 20px;
 	letter-spacing: 3px;
 	background-color: $green;
 	color: $dark-blue;
 	border: none;
-	border-radius: 5px;
+	border-radius: 25px;
 	transition: 0.5s;
 
 	&:hover {
-		padding: 10px 60px;
+		font-weight: 700;
 	}
 
 	&:focus {
@@ -272,8 +269,24 @@ footer {
 		}
 	}
 
-	.button-primary , .nav-link, .scroll-down, .scroll-link {
+	.button-primary, .nav-link, .scroll-down, .scroll-link {
 		font-size: 24px;
+	}
+
+	.button-primary {
+		padding: {
+			left: 40px;
+			right: 40px;
+		}
+
+		&:hover {
+			font-weight: 400;
+			letter-spacing: 5px;
+
+			padding: {
+				right: 80px;
+			}
+		}
 	}
 
 	.error, footer .container-fluid {
@@ -297,6 +310,7 @@ footer {
 			height: 250px;
 			font-size: 22px;
 		}
+
 		input {
 			font-size: 22px;
 		}
@@ -321,13 +335,6 @@ footer {
 		display: block;
 		position: absolute;
 		font-size: 44px;
-	}
-
-	.scroll-down {
-		margin: {
-			top: -150px;
-			bottom: 150px;
-		}
 	}
 }
 
@@ -366,6 +373,8 @@ footer {
 
 		img {
 			max-width: 100%;
+			box-shadow: 0px 0px 30px -15px $dirty-white;
+			border-radius: 50%;
 		}
 	}
 }

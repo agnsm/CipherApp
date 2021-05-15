@@ -5,7 +5,7 @@
 }
 
 <div id="home" class="banner d-flex flex-column justify-content-center">
-    <div class="about">
+    <div class="about mt-5">
         <h1 class="text-uppercase">Szyfr Vigenère'a</h1>
         <h3>koder i dekoder</h3>
         <p>
@@ -24,9 +24,11 @@
     <div class="chars">?</div>
     <div class="chars">4</div>
     <div class="chars">r</div>
+    <div class="chars">ą</div>
+    <div class="chars">&</div>
+    <div class="chars">c</div>
+    <a href="#encoder" class="scroll-down mt-5">z4$zyfrvj c0ś <i class="fas fa-arrow-down"></i></a>
 </div>
-
-<a href="#encoder" class="scroll-down">z4$zyfrvj c0ś <i class="fas fa-arrow-down"></i></a>
 
 <div class="coders-wrapper">
     <div id="encoder" class="encoder d-flex flex-column justify-content-center">
@@ -35,7 +37,7 @@
             <div asp-validation-summary="ModelOnly" class="error"></div>
             <div class="form-group">
                 <label asp-for="EncoderPlainText">wprowadź zwykły tekst:</label>
-                <textarea asp-for="EncoderPlainText" class="form-control" rows="7"></textarea>
+                <textarea asp-for="EncoderPlainText" class="form-control" rows="6"></textarea>
                 <span asp-validation-for="EncoderPlainText" class="error"></span>
             </div>
             <div asp-validation-summary="ModelOnly" class="error"></div>
@@ -46,7 +48,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="EncoderCipherText">twój zaszyfrowany tekst:</label>
-                <textarea asp-for="EncoderCipherText" class="form-control" rows="7"></textarea>
+                <textarea asp-for="EncoderCipherText" class="form-control" rows="6"></textarea>
             </div>
             <div class="buttons d-flex justify-content-between align-items-center">
                 <button type="submit" class="button-primary">ZASZYFRUJ</button>
@@ -61,7 +63,7 @@
             <div asp-validation-summary="ModelOnly" class="error"></div>
             <div class="form-group">
                 <label asp-for="DecoderCipherText">wprowadź zaszyfrowany tekst:</label>
-                <textarea asp-for="DecoderCipherText" class="form-control" rows="7"></textarea>
+                <textarea asp-for="DecoderCipherText" class="form-control" rows="6"></textarea>
                 <span asp-validation-for="DecoderCipherText" class="error"></span>
             </div>
             <div asp-validation-summary="ModelOnly" class="error"></div>
@@ -72,7 +74,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="DecoderPlainText">twój odszyfrowany tekst:</label>
-                <textarea asp-for="DecoderPlainText" class="form-control" rows="7"></textarea>
+                <textarea asp-for="DecoderPlainText" class="form-control" rows="6"></textarea>
             </div>
             <div class="buttons d-flex justify-content-between align-items-center">
                 <button type="submit" class="button-primary">ODSZYFRUJ</button>
@@ -84,7 +86,7 @@
 
 <div id="description" class="description d-flex flex-column justify-content-center">
     <div class="text-wrapper">
-        <h3>opis szyfru vigenère'a</h3>
+        <h3>o szyfrze vigenère'a</h3>
         <p><span class="green">Rodzaj:</span> Polialfabetyczny szyfr podstawieniowy</p>
         <p>
             <span class="green">Historia i zastosowanie:</span> Słabość szyfrów monoalfabetycznych sprawiła, że próbowano wymyślać bardziej rozbudowane szyfry.
@@ -105,7 +107,7 @@
         </p>
     </div>
     <div class="img-wrapper d-none">
-        <img src="~/images/vigenere.jpeg" alt="vigenere's portrait"/>
+        <img src="~/images/vigenere.png" alt="vigenere's portrait"/>
     </div>
 </div>
 

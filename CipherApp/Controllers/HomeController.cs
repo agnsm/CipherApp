@@ -12,36 +12,43 @@ namespace CipherApp.Controllers
     public class HomeController : Controller
     {
         private static VigenereModel vigenere = new VigenereModel() { };
+        private static VigenereModel vigenereOutput;
+        private static bool reset = true;
 
         public HomeController()
-        { }
+        {
+            vigenereOutput = reset ? new VigenereModel() { } : vigenere;
+        }
 
         public IActionResult Index()
         {
-            return View(vigenere);
+            reset = true;
+            return View(vigenereOutput);
         }
 
         [HttpPost]
-        public IActionResult VigenereEncoder(VigenereModel vigenereData)
+        public IActionResult VigenereEncoder(VigenereModel vigenereInput)
         {
-            vigenere.EncoderPlainText = vigenereData.EncoderPlainText;
-            vigenere.EncoderKey = vigenereData.EncoderKey;
-            vigenere.EncoderCipherText = Encrypt(vigenereData.EncoderPlainText, vigenereData.EncoderKey);
+            vigenere.EncoderPlainText = vigenereInput.EncoderPlainText;
+            vigenere.EncoderKey = vigenereInput.EncoderKey;
+            vigenere.EncoderCipherText = Encrypt(vigenereInput.EncoderPlainText, vigenereInput.EncoderKey);
             vigenere.DecoderCipherText = "";
             vigenere.DecoderKey = "";
             vigenere.DecoderPlainText = "";
+            reset = false;
             return RedirectToAction(nameof(Index));
         }
 
         [HttpPost]
-        public IActionResult VigenereDecoder(VigenereModel vigenereData)
+        public IActionResult VigenereDecoder(VigenereModel vigenereInput)
         {
-            vigenere.DecoderCipherText = vigenereData.DecoderCipherText;
-            vigenere.DecoderKey = vigenereData.DecoderKey;
-            vigenere.DecoderPlainText = Decrypt(vigenereData.DecoderCipherText, vigenereData.DecoderKey);
+            vigenere.DecoderCipherText = vigenereInput.DecoderCipherText;
+            vigenere.DecoderKey = vigenereInput.DecoderKey;
+            vigenere.DecoderPlainText = Decrypt(vigenereInput.DecoderCipherText, vigenereInput.DecoderKey);
             vigenere.EncoderPlainText = "";
             vigenere.EncoderKey = "";
             vigenere.EncoderCipherText = "";
+            reset = false;
             return RedirectToAction(nameof(Index));
         }
 
