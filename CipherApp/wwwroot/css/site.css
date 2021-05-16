@@ -88,7 +88,7 @@ h1 {
 }
 
 .banner {
-  height: 100vh;
+  min-height: 100vh;
   text-align: center;
   margin: -50px -15px 0 -15px;
   background-image: url("../images/mobile.png");
