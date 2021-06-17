@@ -58,13 +58,10 @@ h1 {
   height: 50px;
 }
 .nav-wrapper .navbar {
-  padding: 10px 0;
   background-color: #7e9673;
 }
-.nav-wrapper .navbar .container-fluid {
-  background-color: #7e9673;
-  padding-left: 10px;
-  padding-right: 10px;
+.nav-wrapper .navbar ul {
+  text-align: center;
 }
 .nav-wrapper i {
   color: #1f2a36;
@@ -75,10 +72,32 @@ h1 {
 }
 
 .nav-link {
-  color: black;
+  color: #1f2a36;
   font-size: 18px;
 }
 .nav-link:hover {
+  color: #cecfe5;
+}
+
+.language-setter {
+  width: 100px;
+}
+.language-setter select {
+  padding: 5px 10px;
+  font-size: 18px;
+  line-height: 1;
+  background-color: transparent;
+  border: 1px solid #1f2a36;
+  border-radius: 5px;
+}
+.language-setter select:hover {
+  cursor: pointer;
+}
+.language-setter select:focus {
+  outline: none;
+}
+.language-setter select option {
+  background-color: #1f2a36;
   color: #cecfe5;
 }
 
@@ -236,6 +255,10 @@ footer .container-fluid a i {
     font-size: 22px;
   }
 
+  .navbar ul {
+    padding-right: 100px;
+  }
+
   .nav-link {
     padding-left: 20px !important;
     padding-right: 20px !important;
@@ -272,7 +295,7 @@ footer .container-fluid a i {
   }
 
   .encoder textarea, .decoder textarea {
-    height: 250px;
+    height: 200px;
     font-size: 22px;
   }
   .encoder input, .decoder input {
@@ -300,6 +323,10 @@ footer .container-fluid a i {
   }
 }
 @media (min-width: 1600px) {
+  .navbar {
+    position: fixed;
+  }
+
   .coders-wrapper {
     display: flex;
   }
@@ -307,6 +334,7 @@ footer .container-fluid a i {
   .encoder, .decoder {
     width: 50%;
     padding: 0;
+    padding-top: 70px;
   }
 
   .encoder {

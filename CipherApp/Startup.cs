@@ -78,13 +78,6 @@ namespace CipherApp
 
             app.UseAuthorization();
 
-            //var supportedCultures = new[] { "pl", "en" };
-            //var localizationOptions = new RequestLocalizationOptions()
-            //    .SetDefaultCulture(supportedCultures[0])
-            //    .AddSupportedCultures(supportedCultures)
-            //    .AddSupportedUICultures(supportedCultures);
-            //app.UseRequestLocalization(localizationOptions);
-
             app.UseRequestLocalization(app.ApplicationServices.GetRequiredService<IOptions<RequestLocalizationOptions>>().Value);
 
             app.UseEndpoints(endpoints =>
