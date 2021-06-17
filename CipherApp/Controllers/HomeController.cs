@@ -65,7 +65,8 @@ namespace CipherApp.Controllers
 
         private string Encrypt(string plainText, string key)
         {
-            string alphabet = "AĄBCĆDEĘFGHIJKLŁMNŃOÓPQRSŚTUVWXYZŹŻ";
+            var culture = Request.HttpContext.Features.Get<IRequestCultureFeature>().RequestCulture.Culture;
+            string alphabet = culture.Name == "en" ? "ABCDEFGHIJKLMNOPQRSTUVWXYZ" : "AĄBCĆDEĘFGHIJKLŁMNŃOÓPQRSŚTUVWXYZŹŻ";
             string cipherAlphabet; 
             string cipherText = "";
             int j = 0;
@@ -97,7 +98,8 @@ namespace CipherApp.Controllers
 
         private string Decrypt(string cipherText, string key)
         {
-            string alphabet = "AĄBCĆDEĘFGHIJKLŁMNŃOÓPQRSŚTUVWXYZŹŻ";
+            var culture = Request.HttpContext.Features.Get<IRequestCultureFeature>().RequestCulture.Culture;
+            string alphabet = culture.Name == "en" ? "ABCDEFGHIJKLMNOPQRSTUVWXYZ" : "AĄBCĆDEĘFGHIJKLŁMNŃOÓPQRSŚTUVWXYZŹŻ";
             string cipherAlphabet; 
             string plainText = "";
             int j = 0;
