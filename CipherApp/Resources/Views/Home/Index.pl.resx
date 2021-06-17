@@ -121,10 +121,10 @@
     <value>dekoder</value>
   </data>
   <data name="DecoderCipher" xml:space="preserve">
-    <value>wprowadź zaszyfrowany tekst:</value>
+    <value>wprowadź zaszyfrowany tekst</value>
   </data>
   <data name="DecoderPlain" xml:space="preserve">
-    <value>twój odszyfrowany tekst:</value>
+    <value>twój odszyfrowany tekst</value>
   </data>
   <data name="Decrypt" xml:space="preserve">
     <value>odszyfruj</value>
@@ -136,10 +136,10 @@
     <value>enkoder</value>
   </data>
   <data name="EncoderCipher" xml:space="preserve">
-    <value>twój zaszyfrowany tekst:</value>
+    <value>twój zaszyfrowany tekst</value>
   </data>
   <data name="EncoderPlain" xml:space="preserve">
-    <value>wprowadź zwykły tekst:</value>
+    <value>wprowadź zwykły tekst</value>
   </data>
   <data name="Encrypt" xml:space="preserve">
     <value>zaszyfruj</value>
@@ -157,7 +157,7 @@
     <value>o szyfrze vigenère'a</value>
   </data>
   <data name="Key" xml:space="preserve">
-    <value>podaj słowo kluczowe:</value>
+    <value>podaj słowo kluczowe</value>
   </data>
   <data name="LinkInfo" xml:space="preserve">
     <value>Więcej informacji o szyfrze Vigenère'a</value>

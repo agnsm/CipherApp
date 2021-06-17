@@ -1,4 +1,18 @@
 ﻿document.addEventListener('DOMContentLoaded', function () {
+
+    const inputs = document.querySelectorAll('.form-control');
+    inputs.forEach((input) => {
+        input.addEventListener('focus', event => {
+            let label = event.target.previousElementSibling;
+            label.style.color = "#7e9673";
+        });
+        input.addEventListener('blur', event => {
+            let label = event.target.previousElementSibling;
+            label.style.color = "#cecfe5";
+        });
+    });
+
+
     //remember scroll position
     const buttonEnc = document.querySelector('.encoder .button-primary');
     const encoder = document.querySelector('#encoder');
@@ -20,6 +34,7 @@
         window.scrollTo(0, sessionStorage.getItem("scroll-position"));
         sessionStorage.removeItem("scroll-position");
     }
+
 
     //animation
     let divs = document.querySelectorAll('.chars');

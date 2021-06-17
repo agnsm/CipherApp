@@ -161,20 +161,34 @@ h1 {
 .encoder, .decoder {
   min-height: 100vh;
   text-align: left;
-  padding: 2% 0;
+  padding: 10% 0;
 }
 .encoder h3, .decoder h3 {
   text-align: left;
   color: #7e9673;
   border-bottom: 1px solid #7e9673;
-  margin-bottom: 25px;
+}
+.encoder input, .decoder input {
+  height: 50px;
 }
 .encoder input, .encoder textarea, .decoder input, .decoder textarea {
-  background-color: #cecfe5;
-  color: #1f2a36;
+  background-color: #1f2a36;
+  color: #cecfe5;
+  padding: 15px 10px;
 }
 .encoder input:focus, .encoder textarea:focus, .decoder input:focus, .decoder textarea:focus {
-  box-shadow: 0 0 0 1px #7e9673;
+  box-shadow: 0 0 3px 1px #7e9673;
+  background-color: #1f2a36;
+  color: #cecfe5;
+}
+.encoder label, .decoder label {
+  position: relative;
+  top: 20px;
+  left: 10px;
+  font-size: 12px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: #1f2a36;
 }
 
 .error {
@@ -310,10 +324,13 @@ footer .container-fluid a i {
 
   .encoder textarea, .decoder textarea {
     height: 200px;
-    font-size: 22px;
+    font-size: 20px;
   }
   .encoder input, .decoder input {
-    font-size: 22px;
+    font-size: 20px;
+  }
+  .encoder label, .decoder label {
+    font-size: 16px;
   }
 }
 @media (min-width: 1200px) {
@@ -339,6 +356,7 @@ footer .container-fluid a i {
 @media (min-width: 1600px) {
   .navbar {
     position: fixed;
+    z-index: 100;
   }
 
   .coders-wrapper {

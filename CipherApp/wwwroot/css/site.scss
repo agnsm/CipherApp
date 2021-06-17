@@ -172,22 +172,42 @@ body {
 .encoder, .decoder {
 	min-height: 100vh;
 	text-align: left;
-	padding: 2% 0;
+	padding: 10% 0;
 
 	h3 {
 		text-align: left;
 		color: $green;
 		border-bottom: 1px solid $green;
-		margin-bottom: 25px;
+	}
+	
+	input {
+		height: 50px;
 	}
 
 	input, textarea {
-		background-color: $dirty-white;
-		color: $dark-blue;
+		background-color: $dark-blue;
+		color: $dirty-white;
+		padding: 15px 10px;
 
 		&:focus {
-			box-shadow: 0 0 0 1px $green;
+			box-shadow: 0 0 3px 1px $green;
+			background-color: $dark-blue;
+			color: $dirty-white;
 		}
+	}
+
+	label {
+		position: relative;
+		top: 20px;
+		left: 10px;
+		font-size: 12px;
+
+		padding: {
+			left: 10px;
+			right: 10px;
+		}
+
+		background-color: $dark-blue;
 	}
 }
 
@@ -348,11 +368,15 @@ footer {
 	.encoder, .decoder {
 		textarea {
 			height: 200px;
-			font-size: 22px;
+			font-size: 20px;
 		}
 
 		input {
-			font-size: 22px;
+			font-size: 20px;
+		}
+
+		label {
+			font-size: 16px;
 		}
 	}
 }
@@ -381,6 +405,7 @@ footer {
 @media (min-width: 1600px) {
 	.navbar {
 		position: fixed;
+		z-index: 100;
 	}
 
 	.coders-wrapper {
