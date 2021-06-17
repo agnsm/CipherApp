@@ -1,12 +1,16 @@
-﻿@model CipherApp.Models.VigenereModel
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+
+@inject IViewLocalizer Localizer
+
+@model CipherApp.Models.VigenereModel
 
 @{
-    ViewData["Title"] = "Szyfr Vigenère'a";
+    ViewData["Title"] = Localizer["Heading"];
 }
 
 <div class="banner d-flex flex-column justify-content-center">
     <div class="about mt-5">
-        <h1 class="text-uppercase">Szyfr Vigenère'a</h1>
+        <h1 class="text-uppercase">@Localizer["Heading"]</h1>
         <h3>koder i dekoder</h3>
         <p>
             Narzędzie umożliwiające szyfrowanie i odszyfrowywanie wiadomości za pomocą szyfru Vigenère'a z użyciem polskiego alfabetu.
@@ -107,7 +111,7 @@
         </p>
     </div>
     <div class="img-wrapper d-none">
-        <img src="~/images/vigenere.png" alt="vigenere's portrait"/>
+        <img src="~/images/vigenere.png" alt="vigenere's portrait" />
     </div>
 </div>
 
