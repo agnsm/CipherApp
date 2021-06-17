@@ -59,6 +59,7 @@ h1 {
 }
 .nav-wrapper .navbar {
   background-color: #7e9673;
+  border-bottom: 1px solid #1f2a36;
 }
 .nav-wrapper .navbar ul {
   text-align: center;
@@ -80,7 +81,7 @@ h1 {
 }
 
 .language-setter {
-  width: 100px;
+  width: 110px;
 }
 .language-setter select {
   padding: 5px 10px;
@@ -219,7 +220,7 @@ h1 {
 }
 
 .description {
-  min-height: 100vh;
+  min-height: 90vh;
   text-align: justify;
   padding: 3% 0;
 }
@@ -229,11 +230,24 @@ h1 {
   border-bottom: 1px solid #7e9673;
   margin-bottom: 25px;
 }
+.description a {
+  color: #7e9673;
+  text-decoration: none;
+}
+.description a i {
+  margin-right: 5px;
+}
+.description a:hover {
+  text-decoration: underline;
+}
 .description .green {
   color: #7e9673;
 }
 
 /****** footer ******/
+footer {
+  margin-top: 10px;
+}
 footer .container-fluid {
   font-size: 14px;
   background-color: #7e9673;
@@ -256,7 +270,7 @@ footer .container-fluid a i {
   }
 
   .navbar ul {
-    padding-right: 100px;
+    padding-right: 110px;
   }
 
   .nav-link {

@@ -23,7 +23,6 @@
 
     //animation
     let divs = document.querySelectorAll('.chars');
-
     const rand = (multi) => {
         return parseInt(multi * Math.random(), 10);
     }

@@ -117,7 +117,68 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Decoder" xml:space="preserve">
+    <value>decoder</value>
+  </data>
+  <data name="DecoderCipher" xml:space="preserve">
+    <value>enter the encrypted text:</value>
+  </data>
+  <data name="DecoderPlain" xml:space="preserve">
+    <value>your decrypted text:</value>
+  </data>
+  <data name="Decrypt" xml:space="preserve">
+    <value>decrypt</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>A tool for encrypting and decrypting messages with the Vigenère cipher using English alphabet.</value>
+  </data>
+  <data name="Encoder" xml:space="preserve">
+    <value>encoder</value>
+  </data>
+  <data name="EncoderCipher" xml:space="preserve">
+    <value>your encrypted text:</value>
+  </data>
+  <data name="EncoderPlain" xml:space="preserve">
+    <value>enter plain text:</value>
+  </data>
+  <data name="Encrypt" xml:space="preserve">
+    <value>encrypt</value>
+  </data>
   <data name="Heading" xml:space="preserve">
     <value>Vigenère cipher</value>
+  </data>
+  <data name="History" xml:space="preserve">
+    <value>History: </value>
+  </data>
+  <data name="HistoryDesc" xml:space="preserve">
+    <value>The weakness of monoalphabetic ciphers meant that attempts were made to come up with more elaborate ciphers. The natural step was to use several alphabets instead of one as in the case of monoalphabetic ciphers. This gave rise to polyalphabetic base ciphers. The idea of such a cipher appeared already in the 15th century (Leon Battista Alberti). Further ideas are connected with such names as Johannes Trithemius and Giovanni della Porta. The most famous polyalphabetic cipher was created by Blaise de Vigenere, officially published in his work "Traicte des Chiffres" in 1586. While creating his cipher, Vigenere relied on the thoughts of the previously mentioned people.
+</value>
+  </data>
+  <data name="InfoHeading" xml:space="preserve">
+    <value>about vigenère cipher</value>
+  </data>
+  <data name="Key" xml:space="preserve">
+    <value>enter key:</value>
+  </data>
+  <data name="LinkInfo" xml:space="preserve">
+    <value>More information about the Vigenère cipher</value>
+  </data>
+  <data name="MainButton" xml:space="preserve">
+    <value>$t4rt 3ncrypt1ng </value>
+  </data>
+  <data name="Method" xml:space="preserve">
+    <value>Method description: </value>
+  </data>
+  <data name="MethodDesc" xml:space="preserve">
+    <value>We encrypt the text based on the password. The encryption is performed as follows. Each letter of the plaintext is encrypted using the alphabet starting with the corresponding letter in the password. In case the password is shorter than the ciphertext we repeat it many times. Encryption and decryption is done on the basis of Vigenere's table.</value>
+  </data>
+  <data name="Subheading" xml:space="preserve">
+    <value>coder and encoder</value>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>Type: </value>
+  </data>
+  <data name="TypeDesc" xml:space="preserve">
+    <value>Polyalphabetic substitution cipher</value>
   </data>
 </root>
