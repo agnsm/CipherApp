@@ -1,16 +1,18 @@
-﻿@model CipherApp.Models.VigenereModel
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+
+@inject IViewLocalizer Localizer
+
+@model CipherApp.Models.VigenereModel
 
 @{
-    ViewData["Title"] = "Szyfr Vigenère'a";
+    ViewData["Title"] = Localizer["Heading"];
 }
 
-<div id="home" class="banner d-flex flex-column justify-content-center">
+<div class="banner d-flex flex-column justify-content-center">
     <div class="about mt-5">
-        <h1 class="text-uppercase">Szyfr Vigenère'a</h1>
-        <h3>koder i dekoder</h3>
-        <p>
-            Narzędzie umożliwiające szyfrowanie i odszyfrowywanie wiadomości za pomocą szyfru Vigenère'a z użyciem polskiego alfabetu.
-        </p>
+        <h1 class="text-uppercase">@Localizer["Heading"]</h1> 
+        <h3>@Localizer["Subheading"]</h3>
+        <p>@Localizer["Description"]</p>
     </div>
     <div class="chars">x</div>
     <div class="chars">$</div>
@@ -27,57 +29,72 @@
     <div class="chars">ą</div>
     <div class="chars">&</div>
     <div class="chars">c</div>
-    <a href="#encoder" class="scroll-down mt-5">z4$zyfrvj c0ś <i class="fas fa-arrow-down"></i></a>
+    <div class="chars">x</div>
+    <div class="chars">$</div>
+    <div class="chars">0</div>
+    <div class="chars">h</div>
+    <div class="chars">w</div>
+    <div class="chars">q</div>
+    <div class="chars">#</div>
+    <div class="chars">u</div>
+    <div class="chars">f</div>
+    <div class="chars">?</div>
+    <div class="chars">4</div>
+    <div class="chars">r</div>
+    <div class="chars">ą</div>
+    <div class="chars">&</div>
+    <div class="chars">c</div>
+    <a href="#encoder" class="scroll-down mt-5">@Localizer["MainButton"]<i class="fas fa-arrow-down"></i></a>
 </div>
 
 <div class="coders-wrapper">
     <div id="encoder" class="encoder d-flex flex-column justify-content-center">
-        <h3>enkoder</h3>
+        <h3>@Localizer["Encoder"]</h3>
         <form asp-action="VigenereEncoder" method="post">
             <div asp-validation-summary="ModelOnly" class="error"></div>
             <div class="form-group">
-                <label asp-for="EncoderPlainText">wprowadź zwykły tekst:</label>
+                <label asp-for="EncoderPlainText">@Localizer["EncoderPlain"]</label>
                 <textarea asp-for="EncoderPlainText" class="form-control" rows="6"></textarea>
                 <span asp-validation-for="EncoderPlainText" class="error"></span>
             </div>
             <div asp-validation-summary="ModelOnly" class="error"></div>
             <div class="form-group">
-                <label asp-for="EncoderKey">podaj słowo kluczowe:</label>
+                <label asp-for="EncoderKey">@Localizer["Key"]</label>
                 <input type="text" asp-for="EncoderKey" class="form-control" autocomplete="off">
                 <span asp-validation-for="EncoderKey" class="error"></span>
             </div>
             <div class="form-group">
-                <label asp-for="EncoderCipherText">twój zaszyfrowany tekst:</label>
+                <label asp-for="EncoderCipherText">@Localizer["EncoderCipher"]</label>
                 <textarea asp-for="EncoderCipherText" class="form-control" rows="6"></textarea>
             </div>
             <div class="buttons d-flex justify-content-between align-items-center">
-                <button type="submit" class="button-primary">ZASZYFRUJ</button>
+                <button type="submit" class="button-primary text-uppercase">@Localizer["Encrypt"]</button>
                 <a href="#decoder" class="scroll-link">dekoder<i class="fas fa-arrow-down"></i></a>
             </div>
         </form>
     </div>
 
     <div id="decoder" class="decoder d-flex flex-column justify-content-center">
-        <h3>dekoder</h3>
+        <h3>@Localizer["Decoder"]</h3>
         <form asp-action="VigenereDecoder" method="post">
             <div asp-validation-summary="ModelOnly" class="error"></div>
             <div class="form-group">
-                <label asp-for="DecoderCipherText">wprowadź zaszyfrowany tekst:</label>
+                <label asp-for="DecoderCipherText">@Localizer["DecoderCipher"]</label>
                 <textarea asp-for="DecoderCipherText" class="form-control" rows="6"></textarea>
                 <span asp-validation-for="DecoderCipherText" class="error"></span>
             </div>
             <div asp-validation-summary="ModelOnly" class="error"></div>
             <div class="form-group">
-                <label asp-for="DecoderKey">podaj słowo kluczowe:</label>
+                <label asp-for="DecoderKey">@Localizer["Key"]</label>
                 <input type="text" asp-for="DecoderKey" class="form-control" autocomplete="off">
                 <span asp-validation-for="DecoderKey" class="error"></span>
             </div>
             <div class="form-group">
-                <label asp-for="DecoderPlainText">twój odszyfrowany tekst:</label>
+                <label asp-for="DecoderPlainText">@Localizer["DecoderPlain"]</label>
                 <textarea asp-for="DecoderPlainText" class="form-control" rows="6"></textarea>
             </div>
             <div class="buttons d-flex justify-content-between align-items-center">
-                <button type="submit" class="button-primary">ODSZYFRUJ</button>
+                <button type="submit" class="button-primary text-uppercase">@Localizer["Decrypt"]</button>
                 <a href="#encoder" class="scroll-link">enkoder<i class="fas fa-arrow-up"></i></a>
             </div>
         </form>
@@ -86,28 +103,20 @@
 
 <div id="description" class="description d-flex flex-column justify-content-center">
     <div class="text-wrapper">
-        <h3>o szyfrze vigenère'a</h3>
-        <p><span class="green">Rodzaj:</span> Polialfabetyczny szyfr podstawieniowy</p>
+        <h3>@Localizer["InfoHeading"]</h3>
         <p>
-            <span class="green">Historia i zastosowanie:</span> Słabość szyfrów monoalfabetycznych sprawiła, że próbowano wymyślać bardziej rozbudowane szyfry.
-            Naturalnym krokiem było korzystanie z kilku alfabetów zamiast jednego jak w przypadku szyfrów monoalfabetycznych.
-            Dało to początek polialfabetycznym szyfrom podstawieniowym.
-            Idea takiego szyfru pojawiła się już w XV wieku (Leon Battista Alberti).
-            Kolejne pomysły związane są z takimi nazwiskami jak Johannes Trithemius oraz Giovanni della Porta.
-            Najbardziej znany szyfr polialfabetyczny został stworzony przez Blaise de Vigenere`a,
-            oficjalnie opublikowany w jego pracy "Traicte des Chiffres" w 1586 roku.
-            Podczas tworzenia swojego szyfru Vigenere opierał się na przemyśleniach wcześniej wymienionych osób.
+            <span class="green">@Localizer["Type"]</span>@Localizer["TypeDesc"]
         </p>
         <p>
-            <span class="green">Opis metody:</span> Tekst szyfrujemy na podstawie hasła.
-            Szyfrowanie odbywa się w sposób następujący.
-            Każdą literę tekstu jawnego szyfrujemy korzystając z alfabetu zaczynającego się od odpowiadającej litery w haśle.
-            W przypadku, gdy hasło jest krótsze od szyfrowanego tekstu powtarzamy je wielokrotnie.
-            Szyfrowanie i deszyfrowanie odbywa się na podstawie tablicy Vigenere`a - w tym przypadku zawierającej także polskie znaki.
+            <span class="green">@Localizer["History"]</span>@Localizer["HistoryDesc"]
         </p>
+        <p>
+            <span class="green">@Localizer["Method"]</span>@Localizer["MethodDesc"]
+        </p>
+        <a href="http://www.algorytm.org/kryptografia/szyfr-vigenere-a.html" target="_blank"><i class="far fa-question-circle"></i>@Localizer["LinkInfo"]</a>
     </div>
     <div class="img-wrapper d-none">
-        <img src="~/images/vigenere.png" alt="vigenere's portrait"/>
+        <img src="~/images/vigenere.png" alt="vigenere's portrait" />
     </div>
 </div>
 

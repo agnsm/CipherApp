@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Decoder" xml:space="preserve">
+    <value>dekoder</value>
+  </data>
+  <data name="DecoderCipher" xml:space="preserve">
+    <value>wprowadź zaszyfrowany tekst</value>
+  </data>
+  <data name="DecoderPlain" xml:space="preserve">
+    <value>twój odszyfrowany tekst</value>
+  </data>
+  <data name="Decrypt" xml:space="preserve">
+    <value>odszyfruj</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Narzędzie umożliwiające szyfrowanie i odszyfrowywanie wiadomości za pomocą szyfru Vigenère'a z użyciem polskiego alfabetu.</value>
+  </data>
+  <data name="Encoder" xml:space="preserve">
+    <value>enkoder</value>
+  </data>
+  <data name="EncoderCipher" xml:space="preserve">
+    <value>twój zaszyfrowany tekst</value>
+  </data>
+  <data name="EncoderPlain" xml:space="preserve">
+    <value>wprowadź zwykły tekst</value>
+  </data>
+  <data name="Encrypt" xml:space="preserve">
+    <value>zaszyfruj</value>
+  </data>
+  <data name="Heading" xml:space="preserve">
+    <value>Szyfr Vigenère'a</value>
+  </data>
+  <data name="History" xml:space="preserve">
+    <value>Historia i zastosowanie: </value>
+  </data>
+  <data name="HistoryDesc" xml:space="preserve">
+    <value>Słabość szyfrów monoalfabetycznych sprawiła, że próbowano wymyślać bardziej rozbudowane szyfry. Naturalnym krokiem było korzystanie z kilku alfabetów zamiast jednego jak w przypadku szyfrów monoalfabetycznych. Dało to początek polialfabetycznym szyfrom podstawieniowym. Idea takiego szyfru pojawiła się już w XV wieku (Leon Battista Alberti). Kolejne pomysły związane są z takimi nazwiskami jak Johannes Trithemius oraz Giovanni della Porta. Najbardziej znany szyfr polialfabetyczny został stworzony przez Blaise de Vigenere`a, oficjalnie opublikowany w jego pracy "Traicte des Chiffres" w 1586 roku. Podczas tworzenia swojego szyfru Vigenere opierał się na przemyśleniach wcześniej wymienionych osób.</value>
+  </data>
+  <data name="InfoHeading" xml:space="preserve">
+    <value>o szyfrze vigenère'a</value>
+  </data>
+  <data name="Key" xml:space="preserve">
+    <value>podaj słowo kluczowe</value>
+  </data>
+  <data name="LinkInfo" xml:space="preserve">
+    <value>Więcej informacji o szyfrze Vigenère'a</value>
+  </data>
+  <data name="MainButton" xml:space="preserve">
+    <value>z4$zyfrvj c0ś </value>
+  </data>
+  <data name="Method" xml:space="preserve">
+    <value>Opis metody: </value>
+  </data>
+  <data name="MethodDesc" xml:space="preserve">
+    <value>Tekst szyfrujemy na podstawie hasła. Szyfrowanie odbywa się w sposób następujący. Każdą literę tekstu jawnego szyfrujemy korzystając z alfabetu zaczynającego się od odpowiadającej litery w haśle. W przypadku, gdy hasło jest krótsze od szyfrowanego tekstu powtarzamy je wielokrotnie. Szyfrowanie i deszyfrowanie odbywa się na podstawie tablicy Vigenere`a - w tym przypadku zawierającej także polskie znaki.</value>
+  </data>
+  <data name="Subheading" xml:space="preserve">
+    <value>koder i dekoder</value>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>Rodzaj: </value>
+  </data>
+  <data name="TypeDesc" xml:space="preserve">
+    <value>Polialfabetyczny szyfr podstawieniowy</value>
+  </data>
+</root>

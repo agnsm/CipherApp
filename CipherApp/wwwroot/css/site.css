@@ -58,13 +58,11 @@ h1 {
   height: 50px;
 }
 .nav-wrapper .navbar {
-  padding: 10px 0;
   background-color: #7e9673;
+  border-bottom: 1px solid #1f2a36;
 }
-.nav-wrapper .navbar .container-fluid {
-  background-color: #7e9673;
-  padding-left: 10px;
-  padding-right: 10px;
+.nav-wrapper .navbar ul {
+  text-align: center;
 }
 .nav-wrapper i {
   color: #1f2a36;
@@ -75,10 +73,32 @@ h1 {
 }
 
 .nav-link {
-  color: black;
+  color: #1f2a36;
   font-size: 18px;
 }
 .nav-link:hover {
+  color: #cecfe5;
+}
+
+.language-setter {
+  width: 110px;
+}
+.language-setter select {
+  padding: 5px 10px;
+  font-size: 18px;
+  line-height: 1;
+  background-color: transparent;
+  border: 1px solid #1f2a36;
+  border-radius: 5px;
+}
+.language-setter select:hover {
+  cursor: pointer;
+}
+.language-setter select:focus {
+  outline: none;
+}
+.language-setter select option {
+  background-color: #1f2a36;
   color: #cecfe5;
 }
 
@@ -88,7 +108,7 @@ h1 {
 }
 
 .banner {
-  height: 100vh;
+  min-height: 100vh;
   text-align: center;
   margin: -50px -15px 0 -15px;
   background-image: url("../images/mobile.png");
@@ -141,20 +161,34 @@ h1 {
 .encoder, .decoder {
   min-height: 100vh;
   text-align: left;
-  padding: 2% 0;
+  padding: 10% 0;
 }
 .encoder h3, .decoder h3 {
   text-align: left;
   color: #7e9673;
   border-bottom: 1px solid #7e9673;
-  margin-bottom: 25px;
+}
+.encoder input, .decoder input {
+  height: 50px;
 }
 .encoder input, .encoder textarea, .decoder input, .decoder textarea {
-  background-color: #cecfe5;
-  color: #1f2a36;
+  background-color: #1f2a36;
+  color: #cecfe5;
+  padding: 15px 10px;
 }
 .encoder input:focus, .encoder textarea:focus, .decoder input:focus, .decoder textarea:focus {
-  box-shadow: 0 0 0 1px #7e9673;
+  box-shadow: 0 0 3px 1px #7e9673;
+  background-color: #1f2a36;
+  color: #cecfe5;
+}
+.encoder label, .decoder label {
+  position: relative;
+  top: 20px;
+  left: 10px;
+  font-size: 12px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: #1f2a36;
 }
 
 .error {
@@ -200,7 +234,7 @@ h1 {
 }
 
 .description {
-  min-height: 100vh;
+  min-height: 90vh;
   text-align: justify;
   padding: 3% 0;
 }
@@ -210,11 +244,24 @@ h1 {
   border-bottom: 1px solid #7e9673;
   margin-bottom: 25px;
 }
+.description a {
+  color: #7e9673;
+  text-decoration: none;
+}
+.description a i {
+  margin-right: 5px;
+}
+.description a:hover {
+  text-decoration: underline;
+}
 .description .green {
   color: #7e9673;
 }
 
 /****** footer ******/
+footer {
+  margin-top: 10px;
+}
 footer .container-fluid {
   font-size: 14px;
   background-color: #7e9673;
@@ -234,6 +281,10 @@ footer .container-fluid a i {
 @media (min-width: 768px) {
   body {
     font-size: 22px;
+  }
+
+  .navbar ul {
+    padding-right: 110px;
   }
 
   .nav-link {
@@ -272,11 +323,14 @@ footer .container-fluid a i {
   }
 
   .encoder textarea, .decoder textarea {
-    height: 250px;
-    font-size: 22px;
+    height: 200px;
+    font-size: 20px;
   }
   .encoder input, .decoder input {
-    font-size: 22px;
+    font-size: 20px;
+  }
+  .encoder label, .decoder label {
+    font-size: 16px;
   }
 }
 @media (min-width: 1200px) {
@@ -300,6 +354,11 @@ footer .container-fluid a i {
   }
 }
 @media (min-width: 1600px) {
+  .navbar {
+    position: fixed;
+    z-index: 100;
+  }
+
   .coders-wrapper {
     display: flex;
   }
@@ -307,6 +366,7 @@ footer .container-fluid a i {
   .encoder, .decoder {
     width: 50%;
     padding: 0;
+    padding-top: 70px;
   }
 
   .encoder {

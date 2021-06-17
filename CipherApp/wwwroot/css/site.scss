@@ -45,17 +45,13 @@ body {
 	height: $nav-offset;
 
 	.navbar {
-		padding: 10px 0;
 		background-color: $green;
 
-		.container-fluid {
-			background-color: $green;
-
-			padding: {
-				left: 10px;
-				right: 10px;
-			}
+		ul {
+			text-align: center;
 		}
+
+		border-bottom: 1px solid $dark-blue;
 	}
 
 	i {
@@ -70,11 +66,37 @@ body {
 }
 
 .nav-link {
-	color: black;
+	color: $dark-blue;
 	font-size: 18px;
 
 	&:hover {
 		color: $dirty-white;
+	}
+}
+
+.language-setter {
+	width: 110px;
+
+	select {
+		padding: 5px 10px;
+		font-size: 18px;
+		line-height: 1;
+		background-color: transparent;
+		border: 1px solid $dark-blue;
+		border-radius: 5px;
+
+		&:hover {
+			cursor: pointer;
+		}
+
+		&:focus {
+			outline: none;
+		}
+
+		option {
+			background-color: $dark-blue;
+			color: $dirty-white;
+		}
 	}
 }
 
@@ -85,7 +107,7 @@ body {
 }
 
 .banner {
-	height: 100vh;
+	min-height: 100vh;
 	text-align: center;
 	margin: -$nav-offset -15px 0 -15px;
 
@@ -150,22 +172,42 @@ body {
 .encoder, .decoder {
 	min-height: 100vh;
 	text-align: left;
-	padding: 2% 0;
+	padding: 10% 0;
 
 	h3 {
 		text-align: left;
 		color: $green;
 		border-bottom: 1px solid $green;
-		margin-bottom: 25px;
+	}
+	
+	input {
+		height: 50px;
 	}
 
 	input, textarea {
-		background-color: $dirty-white;
-		color: $dark-blue;
+		background-color: $dark-blue;
+		color: $dirty-white;
+		padding: 15px 10px;
 
 		&:focus {
-			box-shadow: 0 0 0 1px $green;
+			box-shadow: 0 0 3px 1px $green;
+			background-color: $dark-blue;
+			color: $dirty-white;
 		}
+	}
+
+	label {
+		position: relative;
+		top: 20px;
+		left: 10px;
+		font-size: 12px;
+
+		padding: {
+			left: 10px;
+			right: 10px;
+		}
+
+		background-color: $dark-blue;
 	}
 }
 
@@ -218,7 +260,7 @@ body {
 }
 
 .description {
-	min-height: 100vh;
+	min-height: 90vh;
 	text-align: justify;
 	padding: 3% 0;
 
@@ -229,6 +271,19 @@ body {
 		margin-bottom: 25px;
 	}
 
+	a {
+		color: $green;
+		text-decoration: none;
+
+		i {
+			margin-right: 5px;
+		}
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
 	.green {
 		color: $green;
 	}
@@ -237,6 +292,7 @@ body {
 /****** footer ******/
 
 footer {
+	margin-top: 10px;
 	.container-fluid {
 		font-size: 14px;
 		background-color: $green;
@@ -260,6 +316,10 @@ footer {
 @include media-breakpoint-up(md) {
 	body {
 		font-size: 22px;
+	}
+
+	.navbar ul {
+		padding-right: 110px;
 	}
 
 	.nav-link {
@@ -307,12 +367,16 @@ footer {
 
 	.encoder, .decoder {
 		textarea {
-			height: 250px;
-			font-size: 22px;
+			height: 200px;
+			font-size: 20px;
 		}
 
 		input {
-			font-size: 22px;
+			font-size: 20px;
+		}
+
+		label {
+			font-size: 16px;
 		}
 	}
 }
@@ -339,6 +403,11 @@ footer {
 }
 
 @media (min-width: 1600px) {
+	.navbar {
+		position: fixed;
+		z-index: 100;
+	}
+
 	.coders-wrapper {
 		display: flex;
 	}
@@ -346,6 +415,7 @@ footer {
 	.encoder, .decoder {
 		width: 50%;
 		padding: 0;
+		padding-top: 70px;
 	}
 
 	.encoder {

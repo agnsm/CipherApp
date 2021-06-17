@@ -1,4 +1,6 @@
 ﻿using CipherApp.Models;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -24,6 +26,15 @@ namespace CipherApp.Controllers
         {
             reset = true;
             return View(vigenereOutput);
+        }
+
+        [HttpPost]
+        public IActionResult SetLanguage(string culture)
+        {
+            Response.Cookies.Append(CookieRequestCultureProvider.DefaultCookieName, CookieRequestCultureProvider.MakeCookieValue(new RequestCulture(culture)), 
+                new CookieOptions { Expires = DateTimeOffset.Now.AddDays(30) });
+
+            return RedirectToAction(nameof(Index));
         }
 
         [HttpPost]
@@ -54,7 +65,8 @@ namespace CipherApp.Controllers
 
         private string Encrypt(string plainText, string key)
         {
-            string alphabet = "AĄBCĆDEĘFGHIJKLŁMNŃOÓPQRSŚTUVWXYZŹŻ";
+            var culture = Request.HttpContext.Features.Get<IRequestCultureFeature>().RequestCulture.Culture;
+            string alphabet = culture.Name == "en" ? "ABCDEFGHIJKLMNOPQRSTUVWXYZ" : "AĄBCĆDEĘFGHIJKLŁMNŃOÓPQRSŚTUVWXYZŹŻ";
             string cipherAlphabet; 
             string cipherText = "";
             int j = 0;
@@ -86,7 +98,8 @@ namespace CipherApp.Controllers
 
         private string Decrypt(string cipherText, string key)
         {
-            string alphabet = "AĄBCĆDEĘFGHIJKLŁMNŃOÓPQRSŚTUVWXYZŹŻ";
+            var culture = Request.HttpContext.Features.Get<IRequestCultureFeature>().RequestCulture.Culture;
+            string alphabet = culture.Name == "en" ? "ABCDEFGHIJKLMNOPQRSTUVWXYZ" : "AĄBCĆDEĘFGHIJKLŁMNŃOÓPQRSŚTUVWXYZŹŻ";
             string cipherAlphabet; 
             string plainText = "";
             int j = 0;

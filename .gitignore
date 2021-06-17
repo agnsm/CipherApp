@@ -281,3 +281,4 @@ __pycache__/
 **/PublishProfiles/
 **/ServiceDependencies/
 .config/
+**/files/

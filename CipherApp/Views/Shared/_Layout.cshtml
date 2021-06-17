@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+
+@inject IViewLocalizer Localizer
+
+<!DOCTYPE html>
 <html lang="pl">
 <head>
     <meta charset="utf-8" />
@@ -13,28 +17,24 @@
 </head>
 <body>
     <div class="nav-wrapper">
-        <nav class="navbar navbar-expand-md">
-            <div class="container-fluid d-flex justify-content-end">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        <nav class="navbar navbar-expand-md w-100">
+            <partial name="_Culture" />
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <i class="fas fa-bars"></i>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav mx-auto text-center">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#home">home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#encoder">zaszyfruj</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#decoder">odszyfruj</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#description">informacje</a>
-                        </li>
-                    </ul>
-                </div>
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#encoder">@Localizer["Encrypt"]</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#decoder">@Localizer["Decrypt"]</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#description">@Localizer["Information"]</a>
+                    </li>
+                </ul>
             </div>
         </nav>
     </div>
@@ -45,11 +45,8 @@
     </main>
     <footer>
         <div class="container-fluid">
-            <div>
-                <a href="http://www.algorytm.org/kryptografia/szyfr-vigenere-a.html"><i class="fas fa-link"></i>Informacje o szyfrze Vigenère'a</a>
-            </div>
             <div class="d-xl-none"><a href='https://www.freepik.com/vectors/background'><i class="fas fa-link"></i>Background vector created by starline - www.freepik.com</a></div>
-            Designed by Agnieszka Smolińska
+            &copy; 2021 Agnieszka Smolińska
         </div>
     </footer>
 
