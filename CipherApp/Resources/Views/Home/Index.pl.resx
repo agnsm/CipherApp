@@ -130,7 +130,7 @@
     <value>odszyfruj</value>
   </data>
   <data name="Description" xml:space="preserve">
-    <value>Narzędzie umożliwiające szyfrowanie i odszyfrowywanie wiadomości za pomocą szyfru Vigenère'a z użyciem polskiego alfabetu.</value>
+    <value>Narzędzie umożliwiające szyfrowanie i odszyfrowywanie wiadomości za pomocą szyfru Vigenère'a.</value>
   </data>
   <data name="Encoder" xml:space="preserve">
     <value>enkoder</value>
@@ -143,6 +143,12 @@
   </data>
   <data name="Encrypt" xml:space="preserve">
     <value>zaszyfruj</value>
+  </data>
+  <data name="FunFacts" xml:space="preserve">
+    <value>ciekawostki</value>
+  </data>
+  <data name="FunFactsIntro" xml:space="preserve">
+    <value>Aby twoja zaszyfrowana wiadomość była nie do złamania, musisz zachować &lt;span class="green"&gt;trzy reguły&lt;/span&gt;:</value>
   </data>
   <data name="Heading" xml:space="preserve">
     <value>Szyfr Vigenère'a</value>
@@ -169,7 +175,16 @@
     <value>Opis metody: </value>
   </data>
   <data name="MethodDesc" xml:space="preserve">
-    <value>Tekst szyfrujemy na podstawie hasła. Szyfrowanie odbywa się w sposób następujący. Każdą literę tekstu jawnego szyfrujemy korzystając z alfabetu zaczynającego się od odpowiadającej litery w haśle. W przypadku, gdy hasło jest krótsze od szyfrowanego tekstu powtarzamy je wielokrotnie. Szyfrowanie i deszyfrowanie odbywa się na podstawie tablicy Vigenere`a - w tym przypadku zawierającej także polskie znaki.</value>
+    <value>Tekst szyfrujemy na podstawie hasła. Szyfrowanie odbywa się w sposób następujący. Każdą literę tekstu jawnego szyfrujemy korzystając z alfabetu zaczynającego się od odpowiadającej litery w haśle. W przypadku, gdy hasło jest krótsze od szyfrowanego tekstu powtarzamy je wielokrotnie. Szyfrowanie i deszyfrowanie odbywa się na podstawie tablicy Vigenere`a.</value>
+  </data>
+  <data name="Rule1" xml:space="preserve">
+    <value>klucz użyty do szyfrowania wiadomości musi być dłuższy lub równy szyfrowanej wiadomości</value>
+  </data>
+  <data name="Rule2" xml:space="preserve">
+    <value>klucz musi być wygenerowany w sposób całkowicie losowy (nie może istnieć sposób na odtworzenie klucza na podstawie znajomości działania generatorów liczb pseudolosowych)</value>
+  </data>
+  <data name="Rule3" xml:space="preserve">
+    <value>klucz nie może być użyty do zaszyfrowania więcej niż jednej wiadomości</value>
   </data>
   <data name="Subheading" xml:space="preserve">
     <value>koder i dekoder</value>

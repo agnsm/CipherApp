@@ -130,7 +130,7 @@
     <value>decrypt</value>
   </data>
   <data name="Description" xml:space="preserve">
-    <value>A tool for encrypting and decrypting messages with the Vigenère cipher using English alphabet.</value>
+    <value>A tool for encrypting and decrypting messages with the Vigenère cipher.</value>
   </data>
   <data name="Encoder" xml:space="preserve">
     <value>encoder</value>
@@ -143,6 +143,12 @@
   </data>
   <data name="Encrypt" xml:space="preserve">
     <value>encrypt</value>
+  </data>
+  <data name="FunFacts" xml:space="preserve">
+    <value>fun facts</value>
+  </data>
+  <data name="FunFactsIntro" xml:space="preserve">
+    <value>To make your encrypted message unbreakable, you must follow &lt;span class="green"&gt;three rules&lt;/span&gt;:</value>
   </data>
   <data name="Heading" xml:space="preserve">
     <value>Vigenère cipher</value>
@@ -171,6 +177,15 @@
   </data>
   <data name="MethodDesc" xml:space="preserve">
     <value>We encrypt the text based on the password. The encryption is performed as follows. Each letter of the plaintext is encrypted using the alphabet starting with the corresponding letter in the password. In case the password is shorter than the ciphertext we repeat it many times. Encryption and decryption is done on the basis of Vigenere's table.</value>
+  </data>
+  <data name="Rule1" xml:space="preserve">
+    <value>the key used to encrypt the message must be longer than or equal to the message being encrypted</value>
+  </data>
+  <data name="Rule2" xml:space="preserve">
+    <value>the key must be generated in a completely random way (there can be no way to recreate the key based on the knowledge of pseudorandom number generators)</value>
+  </data>
+  <data name="Rule3" xml:space="preserve">
+    <value>the key cannot be used to encrypt more than one message</value>
   </data>
   <data name="Subheading" xml:space="preserve">
     <value>coder and encoder</value>

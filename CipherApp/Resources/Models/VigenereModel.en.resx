@@ -117,8 +117,8 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Słowo kluczowe może zawierać tylko litery" xml:space="preserve">
-    <value>The key field can only contain letters</value>
+  <data name="Słowo kluczowe może zawierać tylko litery podstawowego alfabetu łacińskiego" xml:space="preserve">
+    <value>The key field can only contain letters of the basic Latin alphabet</value>
   </data>
   <data name="Wprowadź słowo kluczowe" xml:space="preserve">
     <value>Enter the key</value>

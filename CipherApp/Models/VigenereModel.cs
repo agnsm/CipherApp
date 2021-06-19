@@ -16,7 +16,7 @@ namespace CipherApp.Models
         [Required(ErrorMessage = "Wprowadź słowo kluczowe")]
         [MinLength(1)]
         [StringLength(50)]
-        [RegularExpression(@"^[A-Za-zĄĆĘŁŃÓŚŹŻąćęłńóśźż]*$", ErrorMessage = "Słowo kluczowe może zawierać tylko litery")]
+        [RegularExpression("^[A-Za-z]*$", ErrorMessage = "Słowo kluczowe może zawierać tylko litery podstawowego alfabetu łacińskiego")]
         public string EncoderKey { get; set; }
 
         public string EncoderCipherText { get; set; }
@@ -29,7 +29,7 @@ namespace CipherApp.Models
         [Required(ErrorMessage = "Wprowadź słowo kluczowe")]
         [MinLength(1)]
         [StringLength(50)]
-        [RegularExpression(@"^[A-Za-zĄĆĘŁŃÓŚŹŻąćęłńóśźż]*$", ErrorMessage = "Słowo kluczowe może zawierać tylko litery")]
+        [RegularExpression("^[A-Za-z]*$", ErrorMessage = "Słowo kluczowe może zawierać tylko litery podstawowego alfabetu łacińskiego")]
         public string DecoderKey { get; set; }
 
         public string DecoderPlainText { get; set; }

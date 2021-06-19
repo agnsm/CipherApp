@@ -126,6 +126,12 @@
   <data name="Encrypt" xml:space="preserve">
     <value>zaszyfruj</value>
   </data>
+  <data name="FunFacts" xml:space="preserve">
+    <value>ciekawostki</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>home</value>
+  </data>
   <data name="Information" xml:space="preserve">
     <value>informacje</value>
   </data>

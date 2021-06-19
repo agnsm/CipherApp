@@ -10,7 +10,7 @@
 
 <div class="banner d-flex flex-column justify-content-center">
     <div class="about mt-5">
-        <h1 class="text-uppercase">@Localizer["Heading"]</h1> 
+        <h1 class="text-uppercase" data-aos="zoom-in" data-aos-duration="2500">@Localizer["Heading"]</h1> 
         <h3>@Localizer["Subheading"]</h3>
         <p>@Localizer["Description"]</p>
     </div>
@@ -44,13 +44,13 @@
     <div class="chars">ą</div>
     <div class="chars">&</div>
     <div class="chars">c</div>
-    <a href="#encoder" class="scroll-down mt-5">@Localizer["MainButton"]<i class="fas fa-arrow-down"></i></a>
+    <a href="#encoder" class="scroll-down mt-5" data-aos="flip-up" data-aos-duration="1500">@Localizer["MainButton"]<i class="fas fa-arrow-down"></i></a>
 </div>
 
 <div class="coders-wrapper">
     <div id="encoder" class="encoder d-flex flex-column justify-content-center">
         <h3>@Localizer["Encoder"]</h3>
-        <form asp-action="VigenereEncoder" method="post">
+        <form asp-action="VigenereEncoder" method="post" data-aos="flip-right">
             <div asp-validation-summary="ModelOnly" class="error"></div>
             <div class="form-group">
                 <label asp-for="EncoderPlainText">@Localizer["EncoderPlain"]</label>
@@ -76,7 +76,7 @@
 
     <div id="decoder" class="decoder d-flex flex-column justify-content-center">
         <h3>@Localizer["Decoder"]</h3>
-        <form asp-action="VigenereDecoder" method="post">
+        <form asp-action="VigenereDecoder" method="post" data-aos="flip-left">
             <div asp-validation-summary="ModelOnly" class="error"></div>
             <div class="form-group">
                 <label asp-for="DecoderCipherText">@Localizer["DecoderCipher"]</label>
@@ -113,11 +113,25 @@
         <p>
             <span class="green">@Localizer["Method"]</span>@Localizer["MethodDesc"]
         </p>
-        <a href="http://www.algorytm.org/kryptografia/szyfr-vigenere-a.html" target="_blank"><i class="far fa-question-circle"></i>@Localizer["LinkInfo"]</a>
+        <p data-aos="fade-right" data-aos-duration="1000">
+            <a href="http://www.algorytm.org/kryptografia/szyfr-vigenere-a.html" target="_blank">
+                <i class="far fa-question-circle"></i>@Localizer["LinkInfo"]
+            </a>
+        </p>
     </div>
     <div class="img-wrapper d-none">
-        <img src="~/images/vigenere.png" alt="vigenere's portrait" />
-        <p>Blaise de <span class="green">Vigenère</span></p>
+        <img src="~/images/vigenere.png" alt="vigenere's portrait" data-aos="flip-right" data-aos-duration="1000" />
+        <p data-aos="flip-right" data-aos-duration="1000">Blaise de <span class="green">Vigenère</span></p>
+    </div>
+</div>
+
+<div id="fun-facts" class="fun-facts">
+    <h3>@Localizer["FunFacts"]</h3>
+    <p>@Localizer["FunFactsIntro"]</p>
+    <div class="circle-wrapper">
+        <p class="circle circle-medium ml-auto" data-aos="flip-right">@Localizer["Rule1"]</p>
+        <p class="circle circle-big" data-aos="flip-down">@Localizer["Rule2"]</p>
+        <p class="circle circle-small" data-aos="flip-left">@Localizer["Rule3"]</p>
     </div>
 </div>
 

@@ -1,5 +1,5 @@
 ﻿document.addEventListener('DOMContentLoaded', function () {
-
+    AOS.init();
     manageCookies();
     setScrollPosition();
 
@@ -49,22 +49,27 @@
 
 function manageCookies() {
     const cookieInfo = document.querySelector('.cookie-info');
-    const cookieInfoClose = document.querySelector('.cookie-info > i');
+    const cookieInfoClose = document.querySelector('.info-close');
     const cookies = document.cookie.split('; ');
+    let b = false;
 
     cookies.forEach((cookie) => {
         let name = cookie.split('=')[0];
         let value = cookie.split('=')[1];
         if (name == 'cookies_allowed' && value == 'true') {
-            cookieInfo.setAttribute('style', 'display: none !important');
+            b = true;
         }
     });
+
+    if (!b) {
+        cookieInfo.setAttribute('style', 'display: flex !important');
+    }
 
     cookieInfoClose.addEventListener('click', event => {
         cookieInfo.setAttribute('style', 'display: none !important');
         let date = new Date();
-        //date.setTime(date.getTime() + (30 * 24 * 60 * 60 * 1000));
-        date.setTime(date.getTime() + (10 * 1000));
+        date.setTime(date.getTime() + (30 * 24 * 60 * 60 * 1000));
+        //date.setTime(date.getTime() + (10 * 1000));
         document.cookie = 'cookies_allowed=true; expires=' + date.toUTCString();
     });
 }
