@@ -1,40 +1,7 @@
 ﻿document.addEventListener('DOMContentLoaded', function () {
 
-    const inputs = document.querySelectorAll('.form-control');
-    inputs.forEach((input) => {
-        input.addEventListener('focus', event => {
-            let label = event.target.previousElementSibling;
-            label.style.color = "#7e9673";
-        });
-        input.addEventListener('blur', event => {
-            let label = event.target.previousElementSibling;
-            label.style.color = "#cecfe5";
-        });
-    });
-
-
-    //remember scroll position
-    const buttonEnc = document.querySelector('.encoder .button-primary');
-    const encoder = document.querySelector('#encoder');
-    const positionEnc = encoder.getBoundingClientRect().top;
-    buttonEnc.addEventListener('click', event => {
-        sessionStorage.setItem("scroll-position", positionEnc);
-    });
-
-    const buttonDec = document.querySelector('.decoder .button-primary');
-    const decoder = document.querySelector('#decoder');
-    const positionDec = decoder.getBoundingClientRect().top;
-    buttonDec.addEventListener('click', event => {
-        sessionStorage.setItem("scroll-position", positionDec);
-    });
-
-
-    if (sessionStorage.getItem("scroll-position") != null) {
-        console.log(sessionStorage.getItem("scroll-position"));
-        window.scrollTo(0, sessionStorage.getItem("scroll-position"));
-        sessionStorage.removeItem("scroll-position");
-    }
-
+    manageCookies();
+    setScrollPosition();
 
     //animation
     let divs = document.querySelectorAll('.chars');
@@ -65,5 +32,63 @@
     move();
     window.setTimeout(move, 1000);
     window.setInterval(move, 7000);
-    
+
+    //lable style on focus
+    const inputs = document.querySelectorAll('.form-control');
+    inputs.forEach((input) => {
+        input.addEventListener('focus', event => {
+            let label = event.target.previousElementSibling;
+            label.style.color = '#7e9673';
+        });
+        input.addEventListener('blur', event => {
+            let label = event.target.previousElementSibling;
+            label.style.color = '#cecfe5';
+        });
+    });
 });
+
+function manageCookies() {
+    const cookieInfo = document.querySelector('.cookie-info');
+    const cookieInfoClose = document.querySelector('.cookie-info > i');
+    const cookies = document.cookie.split('; ');
+
+    cookies.forEach((cookie) => {
+        let name = cookie.split('=')[0];
+        let value = cookie.split('=')[1];
+        if (name == 'cookies_allowed' && value == 'true') {
+            cookieInfo.setAttribute('style', 'display: none !important');
+        }
+    });
+
+    cookieInfoClose.addEventListener('click', event => {
+        cookieInfo.setAttribute('style', 'display: none !important');
+        let date = new Date();
+        //date.setTime(date.getTime() + (30 * 24 * 60 * 60 * 1000));
+        date.setTime(date.getTime() + (10 * 1000));
+        document.cookie = 'cookies_allowed=true; expires=' + date.toUTCString();
+    });
+}
+
+function setScrollPosition() {
+    const buttonEnc = document.querySelector('.encoder .button-primary');
+    const encoder = document.querySelector('#encoder');
+    const positionEnc = encoder.getBoundingClientRect().top;
+
+    buttonEnc.addEventListener('click', event => {
+        sessionStorage.setItem('scroll-position', positionEnc);
+    });
+
+    const buttonDec = document.querySelector('.decoder .button-primary');
+    const decoder = document.querySelector('#decoder');
+    const positionDec = decoder.getBoundingClientRect().top;
+
+    buttonDec.addEventListener('click', event => {
+        sessionStorage.setItem('scroll-position', positionDec);
+    });
+
+
+    if (sessionStorage.getItem('scroll-position') != null) {
+        window.scrollTo(0, sessionStorage.getItem('scroll-position'));
+        sessionStorage.removeItem('scroll-position');
+    }
+}

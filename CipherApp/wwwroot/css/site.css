@@ -254,8 +254,32 @@ h1 {
 .description a:hover {
   text-decoration: underline;
 }
-.description .green {
+
+.green {
   color: #7e9673;
+}
+
+.cookie-info {
+  position: fixed;
+  bottom: 0;
+  padding: 10px;
+  text-align: center;
+  font-size: 12px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #cecfe5;
+}
+.cookie-info p {
+  margin-bottom: 0;
+  margin-right: 15px;
+  text-align: justify;
+}
+.cookie-info i {
+  font-size: 20px;
+}
+.cookie-info i:hover {
+  cursor: pointer;
+  color: #7e9673;
+  font-weight: 700;
 }
 
 /****** footer ******/
@@ -280,7 +304,7 @@ footer .container-fluid a i {
 /****** media queries ******/
 @media (min-width: 768px) {
   body {
-    font-size: 22px;
+    font-size: 20px;
   }
 
   .navbar ul {
@@ -332,10 +356,28 @@ footer .container-fluid a i {
   .encoder label, .decoder label {
     font-size: 16px;
   }
+
+  .cookie-info {
+    padding: 20px;
+  }
+  .cookie-info p {
+    margin-right: 15px;
+    text-align: center;
+  }
 }
 @media (min-width: 1200px) {
+  .navbar {
+    position: fixed;
+    z-index: 100;
+  }
+
   main > .container-fluid {
     padding: 0 10%;
+  }
+
+  .cookie-info p {
+    padding-left: 100px;
+    padding-right: 100px;
   }
 
   .banner {
@@ -354,11 +396,6 @@ footer .container-fluid a i {
   }
 }
 @media (min-width: 1600px) {
-  .navbar {
-    position: fixed;
-    z-index: 100;
-  }
-
   .coders-wrapper {
     display: flex;
   }
@@ -396,6 +433,15 @@ footer .container-fluid a i {
     max-width: 100%;
     box-shadow: 0px 0px 30px -15px #cecfe5;
     border-radius: 50%;
+  }
+  .img-wrapper p {
+    margin-top: 15px;
+    font-size: 14px;
+  }
+
+  .cookie-info p {
+    padding-left: 250px;
+    padding-right: 250px;
   }
 }
 

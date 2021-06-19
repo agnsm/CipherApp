@@ -283,9 +283,34 @@ body {
 			text-decoration: underline;
 		}
 	}
+}
 
-	.green {
-		color: $green;
+.green {
+	color: $green;
+}
+
+.cookie-info {
+	position: fixed;
+	bottom: 0;
+	padding: 10px;
+	text-align: center;
+	font-size: 12px;
+	background-color: rgba(0, 0, 0, 0.8);
+	color: $dirty-white;
+
+	p {
+		margin-bottom: 0;
+		margin-right: 15px;
+		text-align: justify;
+	}
+
+	i {
+		font-size: 20px;
+		&:hover {
+			cursor: pointer;
+			color: $green;
+			font-weight: 700;
+		}
 	}
 }
 
@@ -315,7 +340,7 @@ footer {
 
 @include media-breakpoint-up(md) {
 	body {
-		font-size: 22px;
+		font-size: 20px;
 	}
 
 	.navbar ul {
@@ -379,11 +404,33 @@ footer {
 			font-size: 16px;
 		}
 	}
+
+	.cookie-info {
+		padding: 20px;
+		p {
+			margin-right: 15px;
+			text-align: center;
+		}
+	}
 }
 
 @include media-breakpoint-up(xl) {
+	.navbar {
+		position: fixed;
+		z-index: 100;
+	}
+
 	main > .container-fluid {
 		padding: 0 10%;
+	}
+
+	.cookie-info {
+		p {
+			padding: {
+				left: 100px;
+				right: 100px;
+			}
+		}
 	}
 
 	.banner {
@@ -403,11 +450,6 @@ footer {
 }
 
 @media (min-width: 1600px) {
-	.navbar {
-		position: fixed;
-		z-index: 100;
-	}
-
 	.coders-wrapper {
 		display: flex;
 	}
@@ -445,6 +487,19 @@ footer {
 			max-width: 100%;
 			box-shadow: 0px 0px 30px -15px $dirty-white;
 			border-radius: 50%;
+		}
+
+		p {
+			margin-top: 15px;
+			font-size: 14px;
+		}
+	}
+	.cookie-info {
+		p {
+			padding: {
+				left: 250px;
+				right: 250px;
+			}
 		}
 	}
 }

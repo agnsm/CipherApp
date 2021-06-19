@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="CookieInfo" xml:space="preserve">
+    <value>Ta strona wykorzystuje &lt;span class="green"&gt;pliki cookies&lt;/span&gt; w celach statystycznych oraz w celu dostosowania serwisu do indywidualnych potrzeb osób odwiedzających. Pliki cookies użytkownik może kontrolować za pomocą ustawień swojej przeglądarki internetowej. Dalsze korzystanie z tego serwisu internetowego bez zmiany ustawień przeglądarki internetowej oznacza zgodę na zapis lub odczyt plików cookies.</value>
+  </data>
   <data name="Decrypt" xml:space="preserve">
     <value>odszyfruj</value>
   </data>
